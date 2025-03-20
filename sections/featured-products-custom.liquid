@@ -22,7 +22,7 @@
 {%- endstyle -%}
 
 {%- assign heading = section.settings.heading -%}
-{%- assign layout = section.settings.layout -%}
+{%- assign layout = section.settings.layout | plus: 0 -%}
 {%- assign show_arrows = section.settings.show_arrows -%}
 {%- assign collection_list = section.settings.collection_list -%}
 {%- assign container = section.settings.container_width -%}
@@ -48,6 +48,18 @@
 	--banner-overlay: {{ overlay_color }};
 	--cards-per-row: {{ layout }};
 {%- endcapture -%}
+
+{%- assign total_products = 0 -%}
+{%- if collection_list != blank -%}
+    {%- for collection in collection_list -%}
+        {%- assign total_products = total_products | plus: collection.products.size -%}
+    {%- endfor -%}
+{%- endif -%}
+
+{%- assign enable_slider = false -%}
+{%- if total_products > layout -%}
+    {%- assign enable_slider = true -%}
+{%- endif -%}
 
 <section class="featured-products js-featured-products js-animate {% if request.visual_preview_mode or section.index == 1 %}animated{% endif %}" id="{{- section.id -}}" style="--container-width: {{ container_width }};">
 	<div class="featured-products__container">
@@ -81,39 +93,42 @@
 			{% endif %}
 
 			<div class="featured-products__slider swiper need-animate tr-dur-0-8 js-featured-products-slider"
-				 data-slides-in-row="{{ layout }}">
+				 data-slides-in-row="{{ layout }}"
+				 {% unless enable_slider %}style="overflow: visible;"{% endunless %}>
 
-				{% if show_arrows %}
+				{% if show_arrows and enable_slider %}
 					<button class="swiper-button swiper-button--prev js-swiper-button-prev-{{ section.id }}">
 						{%- render 'icons', icon: 'arrow-left' -%}
 					</button>
 				{% endif %}
 
-				<div class="featured-products__row swiper-wrapper">
+				<div class="featured-products__row {% unless enable_slider %}no-swiper{% endunless %} swiper-wrapper">
 					{%- if collection_list != blank -%}
 						{%- for collection in collection_list -%}
 							{%- for product in collection.products limit: 4 -%}
-								<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
+								<div class="featured-products__col {% if enable_slider %}swiper-slide{% endif %} featured-products__col--{{- layout -}}">
 									{%- render 'product-card', product: product -%}
 								</div>
 							{%- endfor -%}
 						{%- endfor -%}
 					{%- else -%}
 						{%- for i in (1..4) -%}
-							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
+							<div class="featured-products__col {% if enable_slider %}swiper-slide{% endif %} featured-products__col--{{- layout -}}">
 								{%- render 'product-card', product: nil -%}
 							</div>
 						{%- endfor -%}
 					{%- endif -%}
 				</div>
 
-				{% if show_arrows %}
+				{% if show_arrows and enable_slider %}
 					<button class="swiper-button swiper-button--next js-swiper-button-next-{{ section.id }}">
 						{%- render 'icons', icon: 'arrow-right' -%}
 					</button>
 				{% endif %}
 
-				<div class="featured-products__slider-pagination js-featured-products-pagination"></div>
+				{% if enable_slider %}
+					<div class="featured-products__slider-pagination js-featured-products-pagination"></div>
+				{% endif %}
 			</div>
 		</div>
 	</div>
