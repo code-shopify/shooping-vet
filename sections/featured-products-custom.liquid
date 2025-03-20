@@ -92,7 +92,7 @@
 				<div class="featured-products__row swiper-wrapper">
 					{%- if collection_list != blank -%}
 						{%- for collection in collection_list -%}
-							{%- for product in collection.products limit: 4 -%}
+							{%- for product in collection.products limit: 12 -%}
 								<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
 									{%- render 'product-card', product: product -%}
 								</div>
