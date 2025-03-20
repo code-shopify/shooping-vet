@@ -24,7 +24,11 @@
 {%- assign heading      		= section.settings.heading -%}
 {%- assign layout       		= section.settings.layout -%}
 {%- assign show_arrows       	= section.settings.show_arrows -%}
+<<<<<<< HEAD
 {%- assign product_list 		= section.settings.collection_list -%}
+=======
+{%- assign product_list 		= section.settings.product_list -%}
+>>>>>>> origin/main
 {%- assign container 			= section.settings.container_width -%}
 
 {%- assign show_banner          = section.settings.show_banner -%}
@@ -188,7 +192,7 @@
 								-%}
 							</div>
 						{%- endfor -%} 
-						{%- endfor -%}
+					{%- endfor -%}
 					{%- else -%}
 						{%- for i in (1..4) -%}
 							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
@@ -232,10 +236,10 @@
 			"default": "Featured products"
 		},
 		{
-			"type": "collection_list",
-			"id": "collection_list",
-			"label": "Collections",
-			"limit": 6
+			"type": "product_list",
+			"id": "product_list",
+			"label": "Products",
+			"limit": 12
 		},
 		{
 			"type": "select",
