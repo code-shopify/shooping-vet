@@ -335,7 +335,6 @@
     },
     "featured-products": {
       "type": "featured-products",
-      "disabled": true,
       "settings": {
         "heading": "NUESTROS BESTSELLERS",
         "product_list": [
@@ -357,6 +356,22 @@
         "offset_bottom_desktop": 40,
         "offset_top_mobile": 50,
         "offset_bottom_mobile": 50
+      }
+    },
+    "featured_products_custom_YMhfFT": {
+      "type": "featured-products-custom",
+      "settings": {
+        "heading": "Featured products",
+        "collection_list": [
+          "alimento-y-premios-para-tus-mascotas"
+        ],
+        "layout": "4",
+        "show_arrows": true,
+        "show_banner": true,
+        "banner_image": "shopify://shop_images/shutterstock_2119321568.jpg",
+        "banner_heading": "LO MÁS TOP",
+        "banner_text": "Nuestros artículos más vendidos",
+        "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)"
       }
     },
     "benefits": {
@@ -469,22 +484,6 @@
         "offset_top_mobile": 0,
         "offset_bottom_mobile": 0
       }
-    },
-    "featured_products_custom_YMhfFT": {
-      "type": "featured-products-custom",
-      "settings": {
-        "heading": "Featured products",
-        "collection_list": [
-          "alimento-y-premios-para-tus-mascotas"
-        ],
-        "layout": "4",
-        "show_arrows": true,
-        "show_banner": true,
-        "banner_image": "shopify://shop_images/shutterstock_2119321568.jpg",
-        "banner_heading": "Heading",
-        "banner_text": "Text",
-        "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)"
-      }
     }
   },
   "order": [
@@ -495,9 +494,9 @@
     "featured_collection_tgjrHy",
     "banner",
     "featured-products",
+    "featured_products_custom_YMhfFT",
     "benefits",
     "featured-blog",
-    "grid-images",
-    "featured_products_custom_YMhfFT"
+    "grid-images"
   ]
 }
