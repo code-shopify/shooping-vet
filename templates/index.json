@@ -444,7 +444,7 @@
         "link_text": "Ver todo",
         "link_aria_label_text": "Todas las noticias",
         "button_style": "secondary-border",
-        "container_width": "inherit",
+        "container_width": "1952px",
         "offset_top_desktop": 60,
         "offset_bottom_desktop": 60,
         "offset_top_mobile": 30,
