@@ -341,7 +341,8 @@
           "alimento-super-premium-nutri-source-adulto-razas-pequenas-5-libras-2-26kg",
           "canis-endo-spot-11-25-kg-labyes-antiparasitario-interno-topico-de-larga-accion-que-elimina-parasitos-en-perros",
           "simparica-trio-brown-40-1-60-kg-1-tab-zoetis-antiparasitario-que-elimina-pulgas-y-garrapatas-parasitos-gastrointestinales-y-previene-la-enfermedad-por-gusano-del-corazon",
-          "premios-nutrisource-soft-tender-dog-treats-w-salmon-6-oz-170g"
+          "premios-nutrisource-soft-tender-dog-treats-w-salmon-6-oz-170g",
+          "alimento-super-premium-nutri-source-adulto-pollo-y-arroz-26-libras-11-8-kg"
         ],
         "layout": "4",
         "show_arrows": true,
@@ -480,12 +481,7 @@
         "show_banner": true,
         "banner_heading": "Heading",
         "banner_text": "Text",
-        "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
-        "container_width": "inherit",
-        "offset_top_desktop": 25,
-        "offset_bottom_desktop": 25,
-        "offset_top_mobile": 25,
-        "offset_bottom_mobile": 25
+        "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)"
       }
     }
   },
