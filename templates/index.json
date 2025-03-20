@@ -335,6 +335,7 @@
     },
     "featured-products": {
       "type": "featured-products",
+      "disabled": true,
       "settings": {
         "heading": "NUESTROS BESTSELLERS",
         "product_list": [
