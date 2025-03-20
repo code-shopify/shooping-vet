@@ -83,12 +83,6 @@
 			<div class="featured-products__slider swiper need-animate tr-dur-0-8 js-featured-products-slider"
 				 data-slides-in-row="{{ layout }}">
 
-				{% if show_arrows %}
-					<button class="swiper-button swiper-button--prev js-swiper-button-prev-{{ section.id }}">
-						{%- render 'icons', icon: 'arrow-left' -%}
-					</button>
-				{% endif %}
-
 				<div class="featured-products__row swiper-wrapper">
 					{%- if collection_list != blank -%}
 						{%- for collection in collection_list -%}
@@ -108,9 +102,14 @@
 				</div>
 
 				{% if show_arrows %}
-					<button class="swiper-button swiper-button--next js-swiper-button-next-{{ section.id }}">
-						{%- render 'icons', icon: 'arrow-right' -%}
-					</button>
+					<div class="featured-products__navigation">
+						<button class="featured-products__arrow featured-products__arrow--prev">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+						</button>
+						<button class="featured-products__arrow featured-products__arrow--next">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+						</button>
+					</div>
 				{% endif %}
 
 				<div class="featured-products__slider-pagination js-featured-products-pagination"></div>
@@ -125,8 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: {{ layout }},
         spaceBetween: 20,
         navigation: {
-            nextEl: '.js-swiper-button-next-{{ section.id }}',
-            prevEl: '.js-swiper-button-prev-{{ section.id }}',
+            nextEl: '.featured-products__arrow--next',
+            prevEl: '.featured-products__arrow--prev',
         },
         pagination: {
             el: '.js-featured-products-pagination',
