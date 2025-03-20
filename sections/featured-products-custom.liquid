@@ -24,7 +24,7 @@
 {%- assign heading      		= section.settings.heading -%}
 {%- assign layout       		= section.settings.layout -%}
 {%- assign show_arrows       	= section.settings.show_arrows -%}
-{%- assign product_list 		= section.settings.product_list -%}
+{%- assign collection_list = section.settings.collection_list -%}
 {%- assign container 			= section.settings.container_width -%}
 
 {%- assign show_banner          = section.settings.show_banner -%}
@@ -169,7 +169,9 @@
 							{%- assign image_size = 480 -%}
 						{%- endif -%}
 
-						{%- for product in product_list -%}
+						{%- for collection in collection_list -%}
+							{%- for product in collection.products -%}
+							
 							{% assign is_lazy = true %}
 
 							{% if section.index == 1 and forloop.index == 1 %}
