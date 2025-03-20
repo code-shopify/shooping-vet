@@ -1,6 +1,6 @@
 {%- comment -%}
 ------------------------------------------------------------------------------
-	Section: Featured products
+	Section: Featured collections
 ------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -21,23 +21,11 @@
 	}
 {%- endstyle -%}
 
-{%- assign heading      		= section.settings.heading -%}
-{%- assign layout       		= section.settings.layout -%}
-{%- assign show_arrows       	= section.settings.show_arrows -%}
-{%- assign product_list 		= section.settings.product_list -%}
-{%- assign container 			= section.settings.container_width -%}
-
-{%- assign show_banner          = section.settings.show_banner -%}
-{%- assign banner_image         = section.settings.banner_image -%}
-{%- assign banner_heading       = section.settings.banner_heading -%}
-{%- assign banner_text          = section.settings.banner_text -%}
-{%- assign overlay_color        = section.settings.overlay_color -%}
-
-{%- assign is_text_in_banner = false -%}
-
-{% if banner_heading != blank or banner_text != blank %}
-	{%- assign is_text_in_banner = true -%}
-{% endif %}
+{%- assign heading = section.settings.heading -%}
+{%- assign layout = section.settings.layout -%}
+{%- assign show_arrows = section.settings.show_arrows -%}
+{%- assign collection_list = section.settings.collection_list -%}
+{%- assign container = section.settings.container_width -%}
 
 {% if container == 'inherit' %}
 	{% assign container_width = settings.container_width %}
@@ -46,30 +34,9 @@
 {% endif %}
 
 {%- capture featured_products_row_wrapper_classes -%}
-	featured-products__slider swiper need-animate tr-dur-0-8 {% if show_banner and is_text_in_banner %}tr-del-0-4{% endif %} {{-  -}}
-	{% if product_list.count > 1 or product_list == blank %} js-featured-products-slider {{-  -}} {%- endif -%}
+	featured-products__slider swiper need-animate tr-dur-0-8 {{-  -}}
+	{% if collection_list.size > 1 or collection_list == blank %} js-featured-products-slider {{-  -}} {%- endif -%}
 {%- endcapture -%}
-
-{%- capture featured_product_row_classes -%}
-	{% unless show_banner and is_text_in_banner %}
-		{% if product_list.count <= 2 and product_list != blank %}
-			featured-products__row--center-desktop {{- -}}
-		{%- elsif layout == "4" and product_list.count < 4 -%}
-			featured-products__row--center-desktop {{- -}}
-		{% endif %}
-
-		{% if product_list.count < 3 %} {{- -}}
-			featured-products__row--center-tablet
-		{% endif %}
-	{% endunless %}
-
-	featured-products__row swiper-wrapper {{-  -}}
-{%- endcapture -%}
-
-{% capture banner_styles %}
-	--banner-overlay: {{ overlay_color }};
-	--cards-per-row: {{ layout }};
-{% endcapture %}
 
 <section class="featured-products js-featured-products js-animate {% if request.visual_preview_mode or section.index == 1 %}animated{% endif %}" id="{{- section.id -}}" style="--container-width: {{ container_width }};">
 	<div class="featured-products__container">
@@ -80,112 +47,27 @@
 		{%- endif -%}
 
 		<div class="featured-products__content-wrapper">
-			{% if show_banner and is_text_in_banner %}
-				<div class="featured-products__banner-aspect-ratio need-animate tr-dur-0-8" style="{{ banner_styles }}">
-					<div class="featured-products__banner-wrapper">
-						{% if banner_image != blank %}
-							{%- capture img_focal -%}
-								--img-desktop-pos: {{ banner_image.presentation.focal_point }};
-							{%- endcapture -%}
-
-							{% if layout == "4" %}
-								{% assign image_width_1920_1x = "365x569" %}
-								{% assign image_width_1920_2x = "730x1138" %}
-							{% else %}
-								{% assign image_width_1920_1x = "461x640" %}
-								{% assign image_width_1920_2x = "922x1280" %}
-							{% endif %}
-
-							<picture class="lazy">
-								<source
-									data-srcset="{{ banner_image | img_url: "388x485", crop: "center" }} 1x, {{ banner_image | img_url: "776x970", crop: "center" }} 2x"
-									srcset="{{ banner_image | img_url: "10x" }} 1x, {{ banner_image | img_url: "10x" }} 2x"
-									width="388"
-									height="485"
-									media="(max-width: 420px)"
-								/>
-
-								<source
-									data-srcset="{{ banner_image | img_url: "735x919", crop: "center" }} 1x, {{ banner_image | img_url: "1470x1838", crop: "center" }} 2x"
-									srcset="{{ banner_image | img_url: "10x" }} 1x, {{ banner_image | img_url: "10x" }} 2x"
-									width="735"
-									height="919"
-									media="(max-width: 767px)"
-								/>
-
-								<source
-									data-srcset="{{ banner_image | img_url: "228x450", crop: "center" }} 1x, {{ banner_image | img_url: "456x900", crop: "center" }} 2x"
-									srcset="{{ banner_image | img_url: "10x" }} 1x, {{ banner_image | img_url: "10x" }} 2x"
-									width="228"
-									height="450"
-									media="(max-width: 991px)"
-								/>
-
-								<img class="featured-products__banner-image"
-									 src="{{- banner_image | img_url: '10x' -}}"
-									 srcset="{{- banner_image | img_url: '10x' -}} 1x, {{ banner_image | img_url: '20x' }} 2x"
-									 data-src="{{- banner_image | img_url: image_width_1920_1x -}}"
-									 data-srcset="{{ banner_image | img_url: image_width_1920_1x, crop: "center" }} 1x, {{ banner_image | img_url: image_width_1920_2x, crop: "center" }} 2x"
-									 width="365"
-									 height="569"
-									 alt="{{ banner_image.alt | escape }}"
-									 style="{{ img_focal }}"
-								>
-							</picture>
-						{% else %}
-							{{ 'collection-apparel-3' | placeholder_svg_tag: "featured-products__banner-image" }}
-						{% endif %}
-
-						<div class="featured-products__banner-content">
-							{% if banner_heading != blank %}
-								<h3 class="h4 featured-products__banner-heading">{{ banner_heading }}</h3>
-							{% endif %}
-
-							{% if banner_text != blank %}
-								<p class="featured-products__banner-text">{{ banner_text }}</p>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-			{% endif %}
-
 			<div class="{{- featured_products_row_wrapper_classes | strip_newlines -}}"
 				 data-slides-in-row="{{ layout }}">
+
 				{% if show_arrows %}
-					{%- if product_list == blank or product_list.count > 1 -%}
+					{%- if collection_list == blank or collection_list.size > 1 -%}
 						<button class="swiper-button swiper-button--prev js-swiper-button-prev-{{ section.id }}">
 							{%- render 'icons', icon: 'arrow-left' -%}
 						</button>
 					{%- endif -%}
 				{% endif %}
 
-				<div class="{{- featured_product_row_classes | strip_newlines -}}">
-					{%- if product_list != blank and product_list.count > 0 -%}
-						{%- assign image_size = 640 -%}
-						{%- assign image_size_tablet = 382 -%}
-						{%- assign image_size_mobile = 333 -%}
-
-						{%- if layout == '4' -%}
-							{%- assign image_size = 480 -%}
-						{%- endif -%}
-
-						{%- for product in product_list -%}
-							{% assign is_lazy = true %}
-
-							{% if section.index == 1 and forloop.index == 1 %}
-								{% assign is_lazy = false %}
-							{% endif %}
-
-							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
-								{%- render
-									'product-card',
-									product: product,
-									size: image_size,
-									tablet_size: image_size_tablet,
-									mobile_size: image_size_mobile,
-									is_lazy: is_lazy
-								-%}
-							</div>
+				<div class="featured-products__row swiper-wrapper">
+					{%- if collection_list != blank and collection_list.size > 0 -%}
+						{%- for collection in collection_list -%}
+							{%- assign products = collection.products | slice: 0, 4 -%} 
+							
+							{%- for product in products -%}
+								<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
+									{%- render 'product-card', product: product -%}
+								</div>
+							{%- endfor -%}
 						{%- endfor -%}
 					{%- else -%}
 						{%- for i in (1..4) -%}
@@ -197,14 +79,14 @@
 				</div>
 
 				{% if show_arrows %}
-					{%- if product_list == blank or product_list.count > 1 -%}
+					{%- if collection_list == blank or collection_list.size > 1 -%}
 						<button class="swiper-button swiper-button--next js-swiper-button-next-{{ section.id }}">
 							{%- render 'icons', icon: 'arrow-right' -%}
 						</button>
 					{% endif %}
 				{% endif %}
 
-				{%- if product_list.count > 1 or product_list == blank -%}
+				{%- if collection_list.size > 1 or collection_list == blank -%}
 					<div class="featured-products__slider-pagination js-featured-products-pagination"></div>
 				{%- endif -%}
 			</div>
@@ -212,13 +94,13 @@
 	</div>
 </section>
 
-{%- if product_list.count > 1 or product_list == blank -%}
+{%- if collection_list.size > 1 or collection_list == blank -%}
 	{%- render 'adastra' with '/src/scripts/section-featured-products.js' -%}
 {%- endif -%}
 
 {%- schema -%}
 {
-	"name": "Collection Custom",
+	"name": "Featured collections",
 	"disabled_on": {
 		"groups": ["header", "footer", "custom.popup"]
 	},
@@ -227,13 +109,13 @@
 			"type": "text",
 			"id": "heading",
 			"label": "Heading",
-			"default": "Featured products"
+			"default": "Featured collections"
 		},
 		{
-			"type": "product_list",
-			"id": "product_list",
-			"label": "Products",
-			"limit": 12
+			"type": "collection_list",
+			"id": "collection_list",
+			"label": "Collections",
+			"limit": 6
 		},
 		{
 			"type": "select",
@@ -260,43 +142,6 @@
 			"info": "Desktop only"
 		},
 		{
-			"type": "header",
-			"content": "Banner"
-		},
-		{
-			"type": "checkbox",
-			"id": "show_banner",
-			"label": "Enable",
-			"default": true
-		},
-		{
-			"type": "image_picker",
-			"id": "banner_image",
-			"label": "Image"
-		},
-		{
-			"type": "text",
-			"id": "banner_heading",
-			"label": "Heading",
-			"default": "Heading"
-		},
-		{
-			"type": "text",
-			"id": "banner_text",
-			"label": "Text",
-			"default": "Text"
-		},
-		{
-			"type": "color_background",
-			"id": "overlay_color",
-			"label": "Overlay color",
-			"default": "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%)"
-		},
-		{
-			"type": "header",
-			"content": "Layout"
-		},
-		{
 			"type": "select",
 			"id": "container_width",
 			"label": "Container width",
@@ -315,11 +160,10 @@
 				},
 				{
 					"value": "inherit",
-					"label": "Inherit of general setting"
+					"label": "Inherit from general settings"
 				}
 			],
-			"default": "inherit",
-			"info": "If you select 'Inherit of general setting', then container width will be used from the Theme settings/Layout"
+			"default": "inherit"
 		},
 		{
 			"type": "range",
@@ -364,7 +208,7 @@
 	],
 	"presets": [
 		{
-			"name": "Featured products with colllection"
+			"name": "Featured collections"
 		}
 	]
 }
