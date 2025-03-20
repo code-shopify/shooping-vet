@@ -24,19 +24,7 @@
 {%- assign heading      		= section.settings.heading -%}
 {%- assign layout       		= section.settings.layout -%}
 {%- assign show_arrows       	= section.settings.show_arrows -%}
-<<<<<<< HEAD
 {%- assign product_list 		= section.settings.product_list -%}
-=======
-<<<<<<< HEAD
-{%- assign collection_list 		= section.settings.collection_list -%}
-=======
-<<<<<<< HEAD
-{%- assign product_list 		= section.settings.collection_list -%}
-=======
-{%- assign product_list 		= section.settings.product_list -%}
->>>>>>> origin/main
->>>>>>> origin/main
->>>>>>> origin/main
 {%- assign container 			= section.settings.container_width -%}
 
 {%- assign show_banner          = section.settings.show_banner -%}
@@ -187,13 +175,6 @@
 							{% if section.index == 1 and forloop.index == 1 %}
 								{% assign is_lazy = false %}
 							{% endif %}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-							{%- for product in collection.products limit: 4 -%}
->>>>>>> origin/main
->>>>>>> origin/main
 
 							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
 								{%- render
@@ -205,16 +186,7 @@
 									is_lazy: is_lazy
 								-%}
 							</div>
-<<<<<<< HEAD
 						{%- endfor -%}
-=======
-<<<<<<< HEAD
-						{%- endfor -%}
-=======
-						{%- endfor -%} 
-					{%- endfor -%}
->>>>>>> origin/main
->>>>>>> origin/main
 					{%- else -%}
 						{%- for i in (1..4) -%}
 							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
