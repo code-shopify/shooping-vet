@@ -90,19 +90,15 @@
 				{% endif %}
 
 				<div class="featured-products__row swiper-wrapper">
-					{%- assign total_products = 0 -%}
 					{%- if collection_list != blank -%}
 						{%- for collection in collection_list -%}
 							{%- for product in collection.products limit: 4 -%}
-								{%- assign total_products = total_products | plus: 1 -%}
 								<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
 									{%- render 'product-card', product: product -%}
 								</div>
 							{%- endfor -%}
 						{%- endfor -%}
-					{%- endif -%}
-
-					{%- if total_products == 0 -%}
+					{%- else -%}
 						{%- for i in (1..4) -%}
 							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
 								{%- render 'product-card', product: nil -%}
@@ -111,23 +107,17 @@
 					{%- endif -%}
 				</div>
 
-				{% if show_arrows and total_products > layout %}
+				{% if show_arrows %}
 					<button class="swiper-button swiper-button--next js-swiper-button-next-{{ section.id }}">
 						{%- render 'icons', icon: 'arrow-right' -%}
 					</button>
 				{% endif %}
 
-				{% if total_products > layout %}
-					<div class="featured-products__slider-pagination js-featured-products-pagination"></div>
-				{% endif %}
+				<div class="featured-products__slider-pagination js-featured-products-pagination"></div>
 			</div>
 		</div>
 	</div>
 </section>
-
-{%- if total_products > layout -%}
-	{%- render 'adastra' with '/src/scripts/section-featured-products.js' -%}
-{%- endif -%}
 
 {%- schema -%}
 {
@@ -193,6 +183,12 @@
 			"id": "banner_text",
 			"label": "Text",
 			"default": "Text"
+		},
+		{
+			"type": "color_background",
+			"id": "overlay_color",
+			"label": "Overlay color",
+			"default": "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%)"
 		}
 	],
 	"presets": [
