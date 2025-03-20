@@ -3,6 +3,9 @@
 	Section: Featured products
 ------------------------------------------------------------------------------
 {%- endcomment -%}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
 {%- render 'adastra' with '/src/styles/carousel.scss' -%}
 {%- render 'adastra' with '/src/styles/featured-products.scss' -%}
@@ -63,10 +66,8 @@
 					<div class="featured-products__banner-wrapper">
 						{% if banner_image != blank %}
 							<img class="featured-products__banner-image lazyload"
-								 src="{{ banner_image | img_url: '1200x' }}"
-								 data-src="{{ banner_image | img_url: '1200x' }}"
-								 alt="{{ banner_image.alt | escape }}"
-								 loading="lazy">
+								 data-src="{{- banner_image | img_url: '600x' -}}"
+								 alt="{{ banner_image.alt | escape }}">
 						{% else %}
 							{{ 'collection-apparel-3' | placeholder_svg_tag: "featured-products__banner-image" }}
 						{% endif %}
