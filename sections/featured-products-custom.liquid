@@ -1,11 +1,11 @@
 {%- comment -%}
 ------------------------------------------------------------------------------
-	Section: Featured products
+	Section: Featured Collections Carousel
 ------------------------------------------------------------------------------
 {%- endcomment -%}
 
 {%- render 'adastra' with '/src/styles/carousel.scss' -%}
-{%- render 'adastra' with '/src/styles/featured-products.scss' -%}
+{%- render 'adastra' with '/src/styles/featured-collections.scss' -%}
 
 {%- style -%}
 	#shopify-section-{{- section.id -}} {
@@ -27,60 +27,22 @@
 {%- assign collection_list = section.settings.collection_list -%}
 {%- assign container = section.settings.container_width -%}
 
-{%- assign show_banner = section.settings.show_banner -%}
-{%- assign banner_image = section.settings.banner_image -%}
-{%- assign banner_heading = section.settings.banner_heading -%}
-{%- assign banner_text = section.settings.banner_text -%}
-{%- assign overlay_color = section.settings.overlay_color -%}
-
-{%- assign is_text_in_banner = false -%}
-{% if banner_heading != blank or banner_text != blank %}
-	{%- assign is_text_in_banner = true -%}
-{% endif %}
-
 {% if container == 'inherit' %}
 	{% assign container_width = settings.container_width %}
 {% else %}
 	{% assign container_width = container %}
 {% endif %}
 
-{%- capture banner_styles -%}
-	--banner-overlay: {{ overlay_color }};
-	--cards-per-row: {{ layout }};
-{%- endcapture -%}
-
-<section class="featured-products js-featured-products js-animate {% if request.visual_preview_mode or section.index == 1 %}animated{% endif %}" id="{{- section.id -}}" style="--container-width: {{ container_width }};">
-	<div class="featured-products__container">
+<section class="featured-collections js-featured-collections js-animate {% if request.visual_preview_mode or section.index == 1 %}animated{% endif %}" id="{{- section.id -}}" style="--container-width: {{ container_width }};">
+	<div class="featured-collections__container">
 		{%- if heading != blank -%}
-			<h2 class="featured-products__heading h2 need-animate tr-dur-0-8">
+			<h2 class="featured-collections__heading h2 need-animate tr-dur-0-8">
 				{{- heading -}}
 			</h2>
 		{%- endif -%}
 
-		<div class="featured-products__content-wrapper">
-			{% if show_banner and is_text_in_banner %}
-				<div class="featured-products__banner-aspect-ratio need-animate tr-dur-0-8" style="{{ banner_styles }}">
-					<div class="featured-products__banner-wrapper">
-						{% if banner_image != blank %}
-							<img class="featured-products__banner-image lazyload"
-								 data-src="{{- banner_image | img_url: '600x' -}}"
-								 alt="{{ banner_image.alt | escape }}">
-						{% else %}
-							{{ 'collection-apparel-3' | placeholder_svg_tag: "featured-products__banner-image" }}
-						{% endif %}
-						<div class="featured-products__banner-content">
-							{% if banner_heading != blank %}
-								<h3 class="h4 featured-products__banner-heading">{{ banner_heading }}</h3>
-							{% endif %}
-							{% if banner_text != blank %}
-								<p class="featured-products__banner-text">{{ banner_text }}</p>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-			{% endif %}
-
-			<div class="featured-products__slider swiper need-animate tr-dur-0-8 js-featured-products-slider"
+		<div class="featured-collections__content-wrapper">
+			<div class="featured-collections__slider swiper need-animate tr-dur-0-8 js-featured-collections-slider"
 				 data-slides-in-row="{{ layout }}">
 
 				{% if show_arrows %}
@@ -89,19 +51,29 @@
 					</button>
 				{% endif %}
 
-				<div class="featured-products__row swiper-wrapper">
+				<div class="featured-collections__row swiper-wrapper">
 					{%- if collection_list != blank -%}
 						{%- for collection in collection_list -%}
-							{%- for product in collection.products limit: 4 -%}
-								<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
-									{%- render 'product-card', product: product -%}
-								</div>
-							{%- endfor -%}
+							<div class="featured-collections__col swiper-slide featured-collections__col--{{- layout -}}">
+								<a href="{{ collection.url }}" class="featured-collection__link">
+									{% if collection.image %}
+										<img class="featured-collection__image lazyload"
+											 data-src="{{ collection.image | img_url: '600x' }}"
+											 alt="{{ collection.title | escape }}">
+									{% else %}
+										{{ 'collection-apparel-3' | placeholder_svg_tag: "featured-collection__image" }}
+									{% endif %}
+									<h3 class="featured-collection__title">{{ collection.title }}</h3>
+								</a>
+							</div>
 						{%- endfor -%}
 					{%- else -%}
 						{%- for i in (1..4) -%}
-							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
-								{%- render 'product-card', product: nil -%}
+							<div class="featured-collections__col swiper-slide featured-collections__col--{{- layout -}}">
+								<div class="featured-collection__placeholder">
+									{{ 'collection-apparel-3' | placeholder_svg_tag: "featured-collection__image" }}
+									<h3 class="featured-collection__title">Collection {{ i }}</h3>
+								</div>
 							</div>
 						{%- endfor -%}
 					{%- endif -%}
@@ -113,7 +85,7 @@
 					</button>
 				{% endif %}
 
-				<div class="featured-products__slider-pagination js-featured-products-pagination"></div>
+				<div class="featured-collections__slider-pagination js-featured-collections-pagination"></div>
 			</div>
 		</div>
 	</div>
@@ -121,13 +93,13 @@
 
 {%- schema -%}
 {
-	"name": "Featured products",
+	"name": "Featured Collections",
 	"settings": [
 		{
 			"type": "text",
 			"id": "heading",
 			"label": "Heading",
-			"default": "Featured products"
+			"default": "Featured Collections"
 		},
 		{
 			"type": "collection_list",
@@ -142,11 +114,11 @@
 			"options": [
 				{
 					"value": "3",
-					"label": "3 products per row"
+					"label": "3 collections per row"
 				},
 				{
 					"value": "4",
-					"label": "4 products per row"
+					"label": "4 collections per row"
 				}
 			],
 			"default": "4"
@@ -156,44 +128,11 @@
 			"id": "show_arrows",
 			"label": "Show arrows",
 			"default": true
-		},
-		{
-			"type": "header",
-			"content": "Banner"
-		},
-		{
-			"type": "checkbox",
-			"id": "show_banner",
-			"label": "Enable",
-			"default": true
-		},
-		{
-			"type": "image_picker",
-			"id": "banner_image",
-			"label": "Image"
-		},
-		{
-			"type": "text",
-			"id": "banner_heading",
-			"label": "Heading",
-			"default": "Heading"
-		},
-		{
-			"type": "text",
-			"id": "banner_text",
-			"label": "Text",
-			"default": "Text"
-		},
-		{
-			"type": "color_background",
-			"id": "overlay_color",
-			"label": "Overlay color",
-			"default": "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%)"
 		}
 	],
 	"presets": [
 		{
-			"name": "Featured products"
+			"name": "Featured Collections"
 		}
 	]
 }
