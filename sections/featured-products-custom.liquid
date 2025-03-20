@@ -119,6 +119,29 @@
 	</div>
 </section>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const featuredProductsSlider = new Swiper('.js-featured-products-slider', {
+        slidesPerView: {{ layout }},
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.js-swiper-button-next-{{ section.id }}',
+            prevEl: '.js-swiper-button-prev-{{ section.id }}',
+        },
+        pagination: {
+            el: '.js-featured-products-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: {{ layout }},
+                spaceBetween: 30,
+            }
+        }
+    });
+});
+</script>
+
 {%- schema -%}
 {
 	"name": "Featured products",
