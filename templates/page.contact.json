@@ -1,0 +1,18 @@
+{
+	"sections": {
+		"location": {
+			"type": "store-location",
+			"settings": {
+			}
+		},
+		"contact-page-template": {
+			"type": "contact-page-template",
+			"settings": {
+			}
+		}
+	},
+	"order": [
+		"location",
+		"contact-page-template"
+	]
+}

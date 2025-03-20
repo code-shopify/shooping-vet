@@ -1,0 +1,66 @@
+{
+  "article": [],
+  "blog": [],
+  "brand": [],
+  "collection": [],
+  "company": [],
+  "company_location": [],
+  "location": [],
+  "market": [],
+  "order": [],
+  "page": [],
+  "product": [
+    {
+      "key": "c_psulas_por_envase",
+      "namespace": "custom",
+      "name": "Cápsulas por envase",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "c_psulas_por_porci_n",
+      "namespace": "custom",
+      "name": "Cápsulas por porción",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "certificaciones",
+      "namespace": "custom",
+      "name": "certificaciones",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabla_informativa",
+      "namespace": "custom",
+      "name": "Tabla informativa",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "funcionalidad",
+      "namespace": "custom",
+      "name": "Funcionalidad",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "variant": [],
+  "shop": []
+}
