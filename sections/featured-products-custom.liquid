@@ -175,6 +175,7 @@
 							{% if section.index == 1 and forloop.index == 1 %}
 								{% assign is_lazy = false %}
 							{% endif %}
+                          {%- for product in collection.products limit: 4 -%}
 
 							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
 								{%- render
@@ -186,6 +187,7 @@
 									is_lazy: is_lazy
 								-%}
 							</div>
+                            {%- endfor -%} 
 						{%- endfor -%}
 					{%- else -%}
 						{%- for i in (1..4) -%}
