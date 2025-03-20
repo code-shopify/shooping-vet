@@ -335,6 +335,7 @@
     },
     "featured-products": {
       "type": "featured-products",
+      "disabled": true,
       "settings": {
         "heading": "NUESTROS BESTSELLERS",
         "product_list": [
@@ -468,6 +469,30 @@
         "offset_top_mobile": 0,
         "offset_bottom_mobile": 0
       }
+    },
+    "featured_products_custom_YMhfFT": {
+      "type": "featured-products-custom",
+      "settings": {
+        "heading": "Featured products",
+        "product_list": [
+          "alfombra-sanitaria-perro-grande-fl7992",
+          "alimento-super-premium-nutri-source-adulto-pollo-y-arroz-15-libras-6-8-kg",
+          "alimento-super-premium-nutri-source-adulto-pollo-y-arroz-26-libras-11-8-kg",
+          "alimento-super-premium-nutri-source-adulto-pollo-y-arroz-5-libras-2-26-kg",
+          "alimento-super-premium-nutri-source-adulto-razas-pequenas-15-libras-6-8kg"
+        ],
+        "layout": "4",
+        "show_arrows": true,
+        "show_banner": true,
+        "banner_heading": "Heading",
+        "banner_text": "Text",
+        "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
+        "container_width": "inherit",
+        "offset_top_desktop": 25,
+        "offset_bottom_desktop": 25,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
     }
   },
   "order": [
@@ -480,6 +505,7 @@
     "featured-products",
     "benefits",
     "featured-blog",
-    "grid-images"
+    "grid-images",
+    "featured_products_custom_YMhfFT"
   ]
 }
