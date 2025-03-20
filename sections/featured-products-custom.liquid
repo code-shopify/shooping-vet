@@ -1,8 +1,10 @@
 {%- comment -%}
 ------------------------------------------------------------------------------
-	Section: Featured products
+	Section: Featured Products
 ------------------------------------------------------------------------------
 {%- endcomment -%}
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
 {%- render 'adastra' with '/src/styles/carousel.scss' -%}
 {%- render 'adastra' with '/src/styles/featured-products.scss' -%}
@@ -92,28 +94,21 @@
 				</div>
 			{% endif %}
 
-			<div class="featured-products__slider swiper need-animate tr-dur-0-8 js-featured-products-slider"
-				 data-slides-in-row="{{ layout }}"
-				 {% unless enable_slider %}style="overflow: visible;"{% endunless %}>
+			<div class="featured-products__slider swiper-container js-featured-products-slider"
+				 data-slides-in-row="{{ layout }}">
 
-				{% if show_arrows and enable_slider %}
-					<button class="swiper-button swiper-button--prev js-swiper-button-prev-{{ section.id }}">
-						{%- render 'icons', icon: 'arrow-left' -%}
-					</button>
-				{% endif %}
-
-				<div class="featured-products__row {% unless enable_slider %}no-swiper{% endunless %} swiper-wrapper">
+				<div class="swiper-wrapper">
 					{%- if collection_list != blank -%}
 						{%- for collection in collection_list -%}
-							{%- for product in collection.products limit: 4 -%}
-								<div class="featured-products__col {% if enable_slider %}swiper-slide{% endif %} featured-products__col--{{- layout -}}">
+							{%- for product in collection.products -%}
+								<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
 									{%- render 'product-card', product: product -%}
 								</div>
 							{%- endfor -%}
 						{%- endfor -%}
 					{%- else -%}
-						{%- for i in (1..4) -%}
-							<div class="featured-products__col {% if enable_slider %}swiper-slide{% endif %} featured-products__col--{{- layout -}}">
+						{%- for i in (1..layout) -%}
+							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
 								{%- render 'product-card', product: nil -%}
 							</div>
 						{%- endfor -%}
@@ -121,13 +116,12 @@
 				</div>
 
 				{% if show_arrows and enable_slider %}
-					<button class="swiper-button swiper-button--next js-swiper-button-next-{{ section.id }}">
-						{%- render 'icons', icon: 'arrow-right' -%}
-					</button>
+					<div class="swiper-button-prev js-swiper-button-prev-{{ section.id }}"></div>
+					<div class="swiper-button-next js-swiper-button-next-{{ section.id }}"></div>
 				{% endif %}
 
 				{% if enable_slider %}
-					<div class="featured-products__slider-pagination js-featured-products-pagination"></div>
+					<div class="swiper-pagination js-featured-products-pagination"></div>
 				{% endif %}
 			</div>
 		</div>
@@ -171,39 +165,6 @@
 			"id": "show_arrows",
 			"label": "Show arrows",
 			"default": true
-		},
-		{
-			"type": "header",
-			"content": "Banner"
-		},
-		{
-			"type": "checkbox",
-			"id": "show_banner",
-			"label": "Enable",
-			"default": true
-		},
-		{
-			"type": "image_picker",
-			"id": "banner_image",
-			"label": "Image"
-		},
-		{
-			"type": "text",
-			"id": "banner_heading",
-			"label": "Heading",
-			"default": "Heading"
-		},
-		{
-			"type": "text",
-			"id": "banner_text",
-			"label": "Text",
-			"default": "Text"
-		},
-		{
-			"type": "color_background",
-			"id": "overlay_color",
-			"label": "Overlay color",
-			"default": "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%)"
 		}
 	],
 	"presets": [
@@ -213,3 +174,30 @@
 	]
 }
 {%- endschema -%}
+
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		var sliders = document.querySelectorAll(".js-featured-products-slider");
+	
+		sliders.forEach(function (slider) {
+			var slidesPerView = slider.getAttribute("data-slides-in-row") || 4;
+	
+			new Swiper(slider, {
+				slidesPerView: parseInt(slidesPerView),
+				spaceBetween: 20,
+				loop: true,
+				navigation: {
+					nextEl: ".js-swiper-button-next-" + slider.id,
+					prevEl: ".js-swiper-button-prev-" + slider.id,
+				},
+				pagination: {
+					el: ".js-featured-products-pagination",
+					clickable: true,
+				}
+			});
+		});
+	});
+	
+
+</script>
