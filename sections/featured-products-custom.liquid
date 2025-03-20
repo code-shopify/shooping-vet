@@ -125,7 +125,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const featuredProductsSlider = new Swiper('.js-featured-products-slider', {
-        slidesPerView: 2, // Mostrar solo 2 productos por paginación
+        slidesPerView: 2, // 2 productos en móvil
         spaceBetween: 20, // Espacio entre los productos
         navigation: {
             nextEl: '.featured-products__arrow--next',
@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         breakpoints: {
             768: {
-                slidesPerView: 2, // Mantener 2 productos en pantallas más grandes
-                spaceBetween: 30, // Aumentar el espacio en pantallas más grandes
+                slidesPerView: 4, // 4 productos en escritorio
+                spaceBetween: 30, // Espacio entre los productos en escritorio
             }
         }
     });
