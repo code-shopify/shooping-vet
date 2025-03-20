@@ -474,12 +474,8 @@
       "type": "featured-products-custom",
       "settings": {
         "heading": "Featured products",
-        "product_list": [
-          "alfombra-sanitaria-perro-grande-fl7992",
-          "alimento-super-premium-nutri-source-adulto-pollo-y-arroz-15-libras-6-8-kg",
-          "alimento-super-premium-nutri-source-adulto-pollo-y-arroz-26-libras-11-8-kg",
-          "alimento-super-premium-nutri-source-adulto-pollo-y-arroz-5-libras-2-26-kg",
-          "alimento-super-premium-nutri-source-adulto-razas-pequenas-15-libras-6-8kg"
+        "collection_list": [
+          "gato"
         ],
         "layout": "4",
         "show_arrows": true,
