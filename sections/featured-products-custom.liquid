@@ -21,17 +21,17 @@
 	}
 {%- endstyle -%}
 
-{%- assign heading      		= section.settings.heading -%}
-{%- assign layout       		= section.settings.layout -%}
-{%- assign show_arrows       	= section.settings.show_arrows -%}
+{%- assign heading = section.settings.heading -%}
+{%- assign layout = section.settings.layout -%}
+{%- assign show_arrows = section.settings.show_arrows -%}
 {%- assign collection_list = section.settings.collection_list -%}
-{%- assign container 			= section.settings.container_width -%}
+{%- assign container = section.settings.container_width -%}
 
-{%- assign show_banner          = section.settings.show_banner -%}
-{%- assign banner_image         = section.settings.banner_image -%}
-{%- assign banner_heading       = section.settings.banner_heading -%}
-{%- assign banner_text          = section.settings.banner_text -%}
-{%- assign overlay_color        = section.settings.overlay_color -%}
+{%- assign show_banner = section.settings.show_banner -%}
+{%- assign banner_image = section.settings.banner_image -%}
+{%- assign banner_heading = section.settings.banner_heading -%}
+{%- assign banner_text = section.settings.banner_text -%}
+{%- assign overlay_color = section.settings.overlay_color -%}
 
 {%- assign is_text_in_banner = false -%}
 
@@ -46,30 +46,32 @@
 {% endif %}
 
 {%- capture featured_products_row_wrapper_classes -%}
-	featured-products__slider swiper need-animate tr-dur-0-8 {% if show_banner and is_text_in_banner %}tr-del-0-4{% endif %} {{-  -}}
-	{% if product_list.count > 1 or product_list == blank %} js-featured-products-slider {{-  -}} {%- endif -%}
+	featured-products__slider swiper need-animate tr-dur-0-8 {% if show_banner and is_text_in_banner %}tr-del-0-4{% endif %}
+	{% if product_list.count > 1 or product_list == blank %} js-featured-products-slider {% endif %}
 {%- endcapture -%}
 
 {%- capture featured_product_row_classes -%}
 	{% unless show_banner and is_text_in_banner %}
 		{% if product_list.count <= 2 and product_list != blank %}
-			featured-products__row--center-desktop {{- -}}
+			featured-products__row--center-desktop
 		{%- elsif layout == "4" and product_list.count < 4 -%}
-			featured-products__row--center-desktop {{- -}}
+			featured-products__row--center-desktop
 		{% endif %}
 
-		{% if product_list.count < 3 %} {{- -}}
+		{% if product_list.count < 3 %}
 			featured-products__row--center-tablet
 		{% endif %}
 	{% endunless %}
 
-	featured-products__row swiper-wrapper {{-  -}}
+	featured-products__row swiper-wrapper
 {%- endcapture -%}
 
 {% capture banner_styles %}
 	--banner-overlay: {{ overlay_color }};
 	--cards-per-row: {{ layout }};
 {% endcapture %}
+
+{%- assign product_list = collections[collection_list.first.handle].products -%}
 
 <section class="featured-products js-featured-products js-animate {% if request.visual_preview_mode or section.index == 1 %}animated{% endif %}" id="{{- section.id -}}" style="--container-width: {{ container_width }};">
 	<div class="featured-products__container">
@@ -169,14 +171,7 @@
 							{%- assign image_size = 480 -%}
 						{%- endif -%}
 
-						{%- for product in product_list -%}
-							{% assign is_lazy = true %}
-
-							{% if section.index == 1 and forloop.index == 1 %}
-								{% assign is_lazy = false %}
-							{% endif %}
-                          {%- for product in collection.products limit: 4 -%}
-
+						{%- for product in product_list limit: 4 -%}
 							<div class="featured-products__col swiper-slide featured-products__col--{{- layout -}}">
 								{%- render
 									'product-card',
@@ -184,10 +179,9 @@
 									size: image_size,
 									tablet_size: image_size_tablet,
 									mobile_size: image_size_mobile,
-									is_lazy: is_lazy
+									is_lazy: true
 								-%}
 							</div>
-                            {%- endfor -%} 
 						{%- endfor -%}
 					{%- else -%}
 						{%- for i in (1..4) -%}
