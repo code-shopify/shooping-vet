@@ -34,6 +34,7 @@
 {%- assign banner_heading = section.settings.banner_heading -%}
 {%- assign banner_text = section.settings.banner_text -%}
 {%- assign overlay_color = section.settings.overlay_color -%}
+{%- assign custom_url = section.settings.custom_url -%}
 
 {%- assign is_text_in_banner = false -%}
 {% if banner_heading != blank or banner_text != blank %}
@@ -63,15 +64,21 @@
 			{% if show_banner and is_text_in_banner %}
 				<div class="featured-products__banner-aspect-ratio need-animate tr-dur-0-8" style="{{ banner_styles }}">
 					<div class="featured-products__banner-wrapper">
+						
 						{% if banner_image != blank %}
+							<a href="{{ custom_url }}">	
+						
+							
 							<img class="featured-products__banner-image lazyload"
 								 src="{{ banner_image | img_url: '1200x' }}"
 								 data-src="{{ banner_image | img_url: '1200x' }}"
 								 alt="{{ banner_image.alt | escape }}"
 								 loading="lazy">
+							</a>
 						{% else %}
 							{{ 'collection-apparel-3' | placeholder_svg_tag: "featured-products__banner-image" }}
 						{% endif %}
+					
 						<div class="featured-products__banner-content">
 							{% if banner_heading != blank %}
 								<h3 class="h4 featured-products__banner-heading">{{ banner_heading }}</h3>
@@ -161,6 +168,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			"label": "Collections",
 			"limit": 1
 		},
+		{
+			"type": "url",
+			"id": "custom_url",
+			"label": "Enlace",
+			"default": "https://tusitio.com"
+		  },
 		{
 			"type": "select",
 			"id": "layout",
