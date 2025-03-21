@@ -366,6 +366,7 @@
         "collection_list": [
           "bestseller"
         ],
+        "custom_url": "shopify://collections/bestseller",
         "layout": "4",
         "show_arrows": true,
         "show_banner": true,
