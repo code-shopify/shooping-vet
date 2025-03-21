@@ -458,7 +458,7 @@
           "type": "grid_image",
           "settings": {
             "heading": "SÍGUENOS",
-            "text": "EN NUESTRO FACEBOOK",
+            "text": "<div> hola </div>",
             "image_desktop": "shopify://shop_images/shutterstock_1507368191.jpg",
             "image_border_width": 0,
             "image_border_indent": 10,
