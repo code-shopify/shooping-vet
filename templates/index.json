@@ -372,7 +372,7 @@
         "show_banner": true,
         "banner_image": "shopify://shop_images/shutterstock_2119321568.jpg",
         "banner_heading": "LO MÁS TOP",
-        "banner_text": "Nuestros artículos más vendidos",
+        "banner_text": "<div class=\"btn-all\"> VER TODO </div>",
         "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)"
       }
     },
