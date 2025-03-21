@@ -63,10 +63,11 @@
 		<div class="featured-products__content-wrapper">
 			{% if show_banner and is_text_in_banner %}
 				<div class="featured-products__banner-aspect-ratio need-animate tr-dur-0-8" style="{{ banner_styles }}">
+				<a href="{{ custom_url }}">	
 					<div class="featured-products__banner-wrapper">
 						
 						{% if banner_image != blank %}
-							<a href="{{ custom_url }}">	
+							
 						
 							
 							<img class="featured-products__banner-image lazyload"
@@ -74,7 +75,7 @@
 								 data-src="{{ banner_image | img_url: '1200x' }}"
 								 alt="{{ banner_image.alt | escape }}"
 								 loading="lazy">
-							</a>
+							
 						{% else %}
 							{{ 'collection-apparel-3' | placeholder_svg_tag: "featured-products__banner-image" }}
 						{% endif %}
@@ -88,6 +89,7 @@
 							{% endif %}
 						</div>
 					</div>
+				</a>
 				</div>
 			{% endif %}
 
