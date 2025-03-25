@@ -17,8 +17,8 @@
         "text": {
           "type": "text",
           "settings": {
-            "heading": "55 2964 9617",
-            "text_content": "<p>Torreón 79 int 101, Piedad Narvarte. CDMX.</p>",
+            "heading": "Contacto",
+            "text_content": "<a href=\"https://wa.me/525529649617\" target=\"_blank\" rel=\"noopener noreferrer\">\n  55 2964 9617\n</a>\n<p>Torreón 79 int 101, Piedad Narvarte. CDMX.</p>",
             "show_social_links": true
           }
         },
@@ -35,7 +35,7 @@
           "settings": {
             "heading": "Contact",
             "text_content": "<p>Add store details and contact information for your customers.</p>",
-            "show_social_links": true
+            "show_social_links": false
           }
         },
         "menu": {
