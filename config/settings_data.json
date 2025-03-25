@@ -75,6 +75,7 @@
     "product_card_button_border_color_hover": "#ffffff",
     "compare_sticky_button_bg": "#000",
     "compare_button_bg": "#fff",
+    "social_facebook_link": "#",
     "cart_reminder_color_text": "#000000",
     "cart_reminder_color_bg": "#efe9da",
     "cart_reminder_color_icon": "#333333",
