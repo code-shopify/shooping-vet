@@ -14,12 +14,6 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "column_Nx9EPz": {
-          "type": "column",
-          "settings": {
-            "column_width": "1-1"
-          }
-        },
         "text": {
           "type": "text",
           "settings": {
@@ -28,17 +22,19 @@
             "show_social_links": true
           }
         },
-        "column_8rEcRE": {
-          "type": "column",
-          "settings": {
-            "column_width": "1-1"
-          }
-        },
         "text_aie8GN": {
           "type": "text",
           "settings": {
             "heading": "55 2964 9617",
             "text_content": "<p>Torreón 79 int 101, Piedad Narvarte. CDMX.</p>",
+            "show_social_links": true
+          }
+        },
+        "text_R8eRWP": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact",
+            "text_content": "<p>Add store details and contact information for your customers.</p>",
             "show_social_links": true
           }
         },
@@ -52,10 +48,9 @@
         }
       },
       "block_order": [
-        "column_Nx9EPz",
         "text",
-        "column_8rEcRE",
         "text_aie8GN",
+        "text_R8eRWP",
         "menu"
       ],
       "settings": {
