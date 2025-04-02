@@ -269,7 +269,7 @@
         "arrow_color": "#001c55",
         "slides_per_view": 2,
         "slides_per_view_tablet": 3,
-        "slides_per_view_desktop": 8,
+        "slides_per_view_desktop": 7,
         "container_width": "1952px"
       }
     },
