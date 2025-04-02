@@ -224,6 +224,64 @@
         "margin_bottom": 44
       }
     },
+    "categorias_list_ehVNwd": {
+      "type": "categorias-list",
+      "blocks": {
+        "categoria_A9tziV": {
+          "type": "categoria",
+          "settings": {
+            "collection": "",
+            "title": "Título",
+            "image": "shopify://shop_images/shutterstock_2098691029.jpg"
+          }
+        },
+        "categoria_RgbRcg": {
+          "type": "categoria",
+          "settings": {
+            "collection": "",
+            "title": "Título",
+            "image": "shopify://shop_images/shutterstock_2098691029.jpg"
+          }
+        },
+        "categoria_MJrp6b": {
+          "type": "categoria",
+          "settings": {
+            "collection": "",
+            "title": "Título",
+            "image": "shopify://shop_images/shutterstock_2098691029.jpg"
+          }
+        },
+        "categoria_R79QL8": {
+          "type": "categoria",
+          "settings": {
+            "collection": "",
+            "title": "Título",
+            "image": "shopify://shop_images/shutterstock_2098691029.jpg"
+          }
+        },
+        "categoria_JckRRn": {
+          "type": "categoria",
+          "settings": {
+            "collection": "",
+            "title": "Título",
+            "image": "shopify://shop_images/shutterstock_2098691029.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "categoria_A9tziV",
+        "categoria_RgbRcg",
+        "categoria_MJrp6b",
+        "categoria_R79QL8",
+        "categoria_JckRRn"
+      ],
+      "settings": {
+        "heading": "¿Para quién comprarás hoy?",
+        "slides_per_view": 2,
+        "slides_per_view_tablet": 3,
+        "slides_per_view_desktop": 5
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -542,6 +600,7 @@
   "order": [
     "slideshow",
     "images_banner_wR3F47",
+    "categorias_list_ehVNwd",
     "featured-collection",
     "featured_collection_ArKWRJ",
     "featured_collection_aDHtEY",
