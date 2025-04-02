@@ -248,7 +248,7 @@
         "title_font_weight": "100",
         "title_letter_spacing": "normal",
         "title_alignment": "center",
-        "arrow_color": "#001C55",
+        "arrow_color": "#001c55",
         "slides_per_view": 2,
         "slides_per_view_tablet": 3,
         "slides_per_view_desktop": 5,
@@ -507,7 +507,8 @@
         "banner_image": "shopify://shop_images/shutterstock_2119321568.jpg",
         "banner_heading": "LO MÁS TOP",
         "banner_text": "<div class=\"btn-all\"> VER TODO </div>",
-        "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)"
+        "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
+        "container_width": "1432px"
       }
     },
     "benefits": {
