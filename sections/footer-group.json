@@ -22,37 +22,16 @@
             "show_social_links": true
           }
         },
-        "text_aie8GN": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "heading": "55 2964 9617",
-            "text_content": "<p>Torreón 79 int 101, Piedad Narvarte. CDMX.</p>",
-            "show_social_links": false
-          }
-        },
-        "text_R8eRWP": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "heading": "Contact",
-            "text_content": "<p>Add store details and contact information for your customers.</p>",
-            "show_social_links": false
-          }
-        },
         "menu": {
           "type": "menu",
-          "disabled": true,
           "settings": {
-            "menu_heading": "",
+            "menu_heading": "Shopping.vet",
             "menu": "footer"
           }
         }
       },
       "block_order": [
         "text",
-        "text_aie8GN",
-        "text_R8eRWP",
         "menu"
       ],
       "settings": {
