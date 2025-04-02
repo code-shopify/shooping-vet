@@ -1,15 +1,13 @@
 {% stylesheet %}
+
 .categorias-circulares {
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   text-align: center;
 }
 .categorias-circulares__title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 2rem;
-}
-.swiper {
-  padding: 0 1rem;
 }
 .swiper-slide {
   text-align: center;
@@ -25,9 +23,8 @@
   height: 120px;
   border-radius: 50%;
   overflow: hidden;
-  background: #f5f5f5;
-  margin-bottom: 0.5rem;
-  border: 4px solid #ffd400; /* ejemplo */
+  border: 4px solid #FFD400;
+  margin: 0 auto 0.5rem auto;
 }
 .categoria-item__image img {
   width: 100%;
@@ -36,28 +33,16 @@
 }
 .categoria-item__title {
   font-weight: bold;
-  color: #001c55;
+  color: #001C55;
+}
+.swiper-button-prev, .swiper-button-next {
+  color: #001C55;
 }
 {% endstylesheet %}
 
-{% javascript %}
-const swiper = new Swiper('#categorias-circulares-swiper', {
-  slidesPerView: {{ section.settings.slides_per_view }},
-  spaceBetween: 20,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    768: { slidesPerView: {{ section.settings.slides_per_view_tablet }} },
-    1024: { slidesPerView: {{ section.settings.slides_per_view_desktop }} },
-  },
-});
-{% endjavascript %}
-
 <div class="categorias-circulares">
   <h2 class="categorias-circulares__title">{{ section.settings.heading }}</h2>
-  
+
   <div class="swiper" id="categorias-circulares-swiper">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
@@ -78,6 +63,28 @@ const swiper = new Swiper('#categorias-circulares-swiper', {
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('#categorias-circulares-swiper', {
+      slidesPerView: {{ section.settings.slides_per_view }},
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: {{ section.settings.slides_per_view_tablet }}
+        },
+        1024: {
+          slidesPerView: {{ section.settings.slides_per_view_desktop }}
+        }
+      }
+    });
+  });
+</script>
+
 {% schema %}
 {
   "name": "Categorías Circulares",
@@ -91,7 +98,7 @@ const swiper = new Swiper('#categorias-circulares-swiper', {
     {
       "type": "range",
       "id": "slides_per_view",
-      "label": "Elementos visibles (móvil)",
+      "label": "Elementos en móvil",
       "min": 1,
       "max": 4,
       "step": 1,
@@ -100,7 +107,7 @@ const swiper = new Swiper('#categorias-circulares-swiper', {
     {
       "type": "range",
       "id": "slides_per_view_tablet",
-      "label": "Elementos visibles (tablet)",
+      "label": "Elementos en tablet",
       "min": 1,
       "max": 6,
       "step": 1,
@@ -109,7 +116,7 @@ const swiper = new Swiper('#categorias-circulares-swiper', {
     {
       "type": "range",
       "id": "slides_per_view_desktop",
-      "label": "Elementos visibles (escritorio)",
+      "label": "Elementos en desktop",
       "min": 1,
       "max": 8,
       "step": 1,
