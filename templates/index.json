@@ -325,6 +325,24 @@
         "container_width": "1952px"
       }
     },
+    "featured_products_custom_YMhfFT": {
+      "type": "featured-products-custom",
+      "settings": {
+        "heading": "NUESTROS BESTSELLERS",
+        "collection_list": [
+          "bestseller"
+        ],
+        "custom_url": "shopify://collections/bestseller",
+        "layout": "4",
+        "show_arrows": true,
+        "show_banner": true,
+        "banner_image": "shopify://shop_images/shutterstock_2119321568.jpg",
+        "banner_heading": "LO MÁS TOP",
+        "banner_text": "<div class=\"btn-all\"> VER TODO </div>",
+        "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
+        "container_width": "1952px"
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -511,24 +529,6 @@
         "offset_bottom_mobile": 50
       }
     },
-    "featured_products_custom_YMhfFT": {
-      "type": "featured-products-custom",
-      "settings": {
-        "heading": "NUESTROS BESTSELLERS",
-        "collection_list": [
-          "bestseller"
-        ],
-        "custom_url": "shopify://collections/bestseller",
-        "layout": "4",
-        "show_arrows": true,
-        "show_banner": true,
-        "banner_image": "shopify://shop_images/shutterstock_2119321568.jpg",
-        "banner_heading": "LO MÁS TOP",
-        "banner_text": "<div class=\"btn-all\"> VER TODO </div>",
-        "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
-        "container_width": "1952px"
-      }
-    },
     "featured_products_custom_6e4EgR": {
       "type": "featured-products-custom",
       "settings": {
@@ -663,13 +663,13 @@
     "slideshow",
     "categorias_list_ehVNwd",
     "images_banner_wR3F47",
+    "featured_products_custom_YMhfFT",
     "featured-collection",
     "featured_collection_ArKWRJ",
     "featured_collection_aDHtEY",
     "featured_collection_tgjrHy",
     "banner",
     "featured-products",
-    "featured_products_custom_YMhfFT",
     "featured_products_custom_6e4EgR",
     "benefits",
     "featured-blog",
