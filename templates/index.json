@@ -267,7 +267,7 @@
         "title_font_weight": "100",
         "title_letter_spacing": "normal",
         "title_alignment": "center",
-        "arrow_color": "#001c55",
+        "arrow_color": "#ffffff",
         "slides_per_view": 2,
         "slides_per_view_tablet": 3,
         "slides_per_view_desktop": 7,
