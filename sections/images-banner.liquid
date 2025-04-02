@@ -1,6 +1,7 @@
 <section class="custom-banner-section" style="
   margin-top: {{ section.settings.margin_top }}px;
   margin-bottom: {{ section.settings.margin_bottom }}px;
+  max-width: {{ section.settings.container_width }};
 ">
   <div class="featured-collection__container">
     <div class="banner-wrapper">
@@ -41,11 +42,6 @@
 </section>
 
 <style>
-  .custom-banner-section .featured-collection__container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 16px;
-  }
   .custom-banner-section .banner-wrapper {
     display: flex;
     gap: 2rem;
@@ -116,6 +112,35 @@
       "step": 1,
       "unit": "px",
       "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "container_width",
+      "label": "Container width",
+      "options": [
+        {
+          "value": "1432px",
+          "label": "Default - 1400px"
+        },
+        {
+          "value": "1952px",
+          "label": "Large - 1920px"
+        },
+        {
+          "value": "100%",
+          "label": "Full width"
+        },
+        {
+          "value": "inherit",
+          "label": "Inherit of general setting"
+        }
+      ],
+      "default": "inherit",
+      "info": "If you select 'Inherit of general setting', then container width will be used from the Theme settings/Layout"
     }
   ],
   "blocks": [

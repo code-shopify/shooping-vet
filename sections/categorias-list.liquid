@@ -39,7 +39,12 @@
 }
 .swiper-button-prev, .swiper-button-next {
   color: #001C55;
+  font-size: 1rem !important;
 }
+.swiper-button-prev::after, .swiper-button-next::after {
+  font-size: 0.8rem !important; /* Ajusta el tamaño del ícono de las flechas */
+}
+
 {% endstylesheet %}
 
 <div class="categorias-circulares" style="max-width: {{ section.settings.container_width }}; margin: 0 auto;">
