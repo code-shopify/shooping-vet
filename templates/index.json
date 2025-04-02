@@ -266,6 +266,13 @@
             "title": "Título",
             "image": "shopify://shop_images/shutterstock_2098691029.jpg"
           }
+        },
+        "categoria_yPYmg9": {
+          "type": "categoria",
+          "settings": {
+            "collection": "",
+            "title": "Título"
+          }
         }
       },
       "block_order": [
@@ -273,7 +280,8 @@
         "categoria_RgbRcg",
         "categoria_MJrp6b",
         "categoria_R79QL8",
-        "categoria_JckRRn"
+        "categoria_JckRRn",
+        "categoria_yPYmg9"
       ],
       "settings": {
         "heading": "¿Para quién comprarás hoy?",
