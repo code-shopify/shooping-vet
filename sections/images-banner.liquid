@@ -1,29 +1,40 @@
-
 <section class="custom-banner-section">
   <div class="featured-collection__container">
-  <div class="banner-wrapper">
-    {% for block in section.blocks %}
-      <div class="banner-block">
-        {% if block.settings.image %}
-          <div class="banner-image" style="background-image: url({{ block.settings.image | img_url: 'master' }});">
-            <div class="banner-content">
-              {% if block.settings.small_text != blank %}
-                <p class="banner-small-text">{{ block.settings.small_text }}</p>
-              {% endif %}
-              {% if block.settings.title != blank %}
-                <h2 class="banner-title">{{ block.settings.title }}</h2>
-              {% endif %}
-              {% if block.settings.button_label != blank and block.settings.button_link != blank %}
-                <a href="{{ block.settings.button_link }}" class="banner-button">{{ block.settings.button_label }}</a>
-              {% endif %}
+    <div class="banner-wrapper">
+      {% for block in section.blocks %}
+        <div class="banner-block">
+          {% if block.settings.image %}
+            <div class="banner-image" style="background-image: url({{ block.settings.image | img_url: 'master' }});">
+              <div class="banner-content" style="
+                color: {{ block.settings.text_color }};
+                font-size: {{ block.settings.text_size }};
+                letter-spacing: {{ block.settings.letter_spacing }};
+              ">
+                {% if block.settings.small_text != blank %}
+                  <p class="banner-small-text" style="
+                    font-size: {{ block.settings.small_text_size }};
+                    font-weight: {{ block.settings.small_text_bold }};
+                  ">{{ block.settings.small_text }}</p>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <h2 class="banner-title" style="
+                    font-size: {{ block.settings.title_size }};
+                    font-weight: {{ block.settings.title_bold }};
+                  ">{{ block.settings.title }}</h2>
+                {% endif %}
+                {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                  <a href="{{ block.settings.button_link }}" class="banner-button" style="
+                    background: {{ block.settings.button_color }};
+                    color: {{ block.settings.button_text_color }};
+                  ">{{ block.settings.button_label }}</a>
+                {% endif %}
+              </div>
             </div>
-          </div>
-        {% endif %}
-      </div>
-    {% endfor %}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
-</div>
-
 </section>
 
 <style>
@@ -50,24 +61,12 @@
   }
   .custom-banner-section .banner-content {
     text-align: center;
-    color: white;
     padding: 20px;
     position: absolute;
     width: 30%;
     left: 0;
   }
-  .custom-banner-section .banner-small-text {
-    font-size: 0.9em;
-    font-style: italic;
-  }
-  .custom-banner-section .banner-title {
-    font-size: 1.8em;
-    font-weight: bold;
-    margin: 10px 0;
-  }
   .custom-banner-section .banner-button {
-    background: black;
-    color: white;
     padding: 10px 20px;
     display: inline-block;
     border-radius: 25px;
@@ -98,22 +97,100 @@
         {
           "type": "text",
           "id": "small_text",
-          "label": "Texto pequeño"
+          "label": "Texto pequeño",
         },
         {
           "type": "text",
           "id": "title",
-          "label": "Título"
+          "label": "Título",
         },
         {
           "type": "text",
           "id": "button_label",
-          "label": "Texto del botón"
+          "label": "Texto del botón",
         },
         {
           "type": "url",
           "id": "button_link",
-          "label": "Enlace del botón"
+          "label": "Enlace del botón",
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Color del texto",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "text_size",
+          "label": "Tamaño del texto",
+          "min": 12,
+          "max": 36,
+          "step": 1,
+          "unit": "px",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "letter_spacing",
+          "label": "Espaciado entre letras",
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "unit": "em",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "small_text_size",
+          "label": "Tamaño del texto pequeño",
+          "min": 10,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "default": 14
+        },
+        {
+          "type": "select",
+          "id": "small_text_bold",
+          "label": "Negrita del texto pequeño",
+          "options": [
+            { "value": "normal", "label": "Normal" },
+            { "value": "bold", "label": "Negrita" }
+          ],
+          "default": "normal"
+        },
+        {
+          "type": "range",
+          "id": "title_size",
+          "label": "Tamaño del título",
+          "min": 16,
+          "max": 48,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        },
+        {
+          "type": "select",
+          "id": "title_bold",
+          "label": "Negrita del título",
+          "options": [
+            { "value": "normal", "label": "Normal" },
+            { "value": "bold", "label": "Negrita" }
+          ],
+          "default": "bold"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Color del botón",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Color del texto del botón",
+          "default": "#ffffff"
         }
       ]
     }
