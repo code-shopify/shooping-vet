@@ -68,8 +68,14 @@
         </div>
       {% endfor %}
     </div>
-    <div class="swiper-button-prev" style="color: {{ section.settings.arrow_color }};"></div>
-    <div class="swiper-button-next" style="color: {{ section.settings.arrow_color }};"></div>
+    <div class="swiper-button-prev" style="
+      color: {{ section.settings.arrow_color }};
+      font-size: {{ section.settings.arrow_size }};
+    "></div>
+    <div class="swiper-button-next" style="
+      color: {{ section.settings.arrow_color }};
+      font-size: {{ section.settings.arrow_size }};
+    "></div>
   </div>
 </div>
 
@@ -140,6 +146,12 @@
       "id": "arrow_color",
       "label": "Color de las flechas",
       "default": "#001C55"
+    },
+    {
+      "type": "text",
+      "id": "arrow_size",
+      "label": "Tamaño de las flechas",
+      "default": "1.5rem"
     },
     {
       "type": "range",
