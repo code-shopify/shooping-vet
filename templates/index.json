@@ -219,7 +219,10 @@
         "banner_3XxHeb",
         "banner_rzbjR3"
       ],
-      "settings": {}
+      "settings": {
+        "margin_top": 43,
+        "margin_bottom": 44
+      }
     },
     "featured-collection": {
       "type": "featured-collection",
