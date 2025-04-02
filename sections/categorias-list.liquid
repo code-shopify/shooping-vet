@@ -48,6 +48,7 @@
     font-size: {{ section.settings.title_font_size }};
     font-weight: {{ section.settings.title_font_weight }};
     letter-spacing: {{ section.settings.title_letter_spacing }};
+    text-align: {{ section.settings.title_alignment }};
   ">
     {{ section.settings.heading }}
   </h2>
@@ -67,8 +68,8 @@
         </div>
       {% endfor %}
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev" style="color: {{ section.settings.arrow_color }};"></div>
+    <div class="swiper-button-next" style="color: {{ section.settings.arrow_color }};"></div>
   </div>
 </div>
 
@@ -127,6 +128,18 @@
       "id": "title_letter_spacing",
       "label": "Espaciado de letras del título",
       "default": "normal"
+    },
+    {
+      "type": "text",
+      "id": "title_alignment",
+      "label": "Alineación del título",
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "Color de las flechas",
+      "default": "#001C55"
     },
     {
       "type": "range",
