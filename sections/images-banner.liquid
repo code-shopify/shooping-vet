@@ -1,9 +1,8 @@
 <section class="custom-banner-section" style="
   margin-top: {{ section.settings.margin_top }}px;
   margin-bottom: {{ section.settings.margin_bottom }}px;
-  max-width: {{ section.settings.container_width }};
 ">
-  <div class="featured-collection__container">
+  <div class="featured-collection__container" style="  max-width: {{ section.settings.container_width }}; margin: 0 auto;">
     <div class="banner-wrapper">
       {% for block in section.blocks %}
         <div class="banner-block">
