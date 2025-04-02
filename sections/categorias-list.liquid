@@ -3,9 +3,9 @@
 .categorias-circulares {
   padding: 2rem 1rem;
   text-align: center;
-  max-width: {{ section.settings.container_width }};
   margin: 0 auto;
 }
+
 .categorias-circulares__title {
   font-size: 1.8rem;
   font-weight: bold;
@@ -42,7 +42,7 @@
 }
 {% endstylesheet %}
 
-<div class="categorias-circulares">
+<div class="categorias-circulares" style="max-width: {{ section.settings.container_width }}; margin: 0 auto;">
   <h2 class="categorias-circulares__title">{{ section.settings.heading }}</h2>
 
   <div class="swiper" id="categorias-circulares-swiper">

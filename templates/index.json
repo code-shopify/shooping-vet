@@ -287,8 +287,7 @@
         "heading": "¿Para quién comprarás hoy?",
         "slides_per_view": 2,
         "slides_per_view_tablet": 3,
-        "slides_per_view_desktop": 5,
-        "container_width": "1432px"
+        "slides_per_view_desktop": 5
       }
     },
     "featured-collection": {
