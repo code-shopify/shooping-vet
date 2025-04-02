@@ -3,6 +3,8 @@
 .categorias-circulares {
   padding: 2rem 1rem;
   text-align: center;
+  max-width: {{ section.settings.container_width }};
+  margin: 0 auto;
 }
 .categorias-circulares__title {
   font-size: 1.8rem;
@@ -121,6 +123,35 @@
       "max": 8,
       "step": 1,
       "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "container_width",
+      "label": "Container width",
+      "options": [
+        {
+          "value": "1432px",
+          "label": "Default - 1400px"
+        },
+        {
+          "value": "1952px",
+          "label": "Large - 1920px"
+        },
+        {
+          "value": "100%",
+          "label": "Full width"
+        },
+        {
+          "value": "inherit",
+          "label": "Inherit of general setting"
+        }
+      ],
+      "default": "inherit",
+      "info": "If you select 'Inherit of general setting', then container width will be used from the Theme settings/Layout"
     }
   ],
   "blocks": [
