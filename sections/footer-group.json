@@ -26,7 +26,7 @@
           "type": "menu",
           "settings": {
             "menu_heading": "Shopping.vet",
-            "menu": "footer"
+            "menu": "menu-footer"
           }
         }
       },
