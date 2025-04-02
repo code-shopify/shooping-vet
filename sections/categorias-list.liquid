@@ -43,7 +43,14 @@
 {% endstylesheet %}
 
 <div class="categorias-circulares" style="max-width: {{ section.settings.container_width }}; margin: 0 auto;">
-  <h2 class="categorias-circulares__title">{{ section.settings.heading }}</h2>
+  <h2 class="categorias-circulares__title" style="
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_font_size }};
+    font-weight: {{ section.settings.title_font_weight }};
+    letter-spacing: {{ section.settings.title_letter_spacing }};
+  ">
+    {{ section.settings.heading }}
+  </h2>
 
   <div class="swiper" id="categorias-circulares-swiper">
     <div class="swiper-wrapper">
@@ -96,6 +103,30 @@
       "id": "heading",
       "label": "Título",
       "default": "¿Para quién comprarás hoy?"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color del título",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "title_font_size",
+      "label": "Tamaño de fuente del título",
+      "default": "1.8rem"
+    },
+    {
+      "type": "text",
+      "id": "title_font_weight",
+      "label": "Peso de fuente del título",
+      "default": "bold"
+    },
+    {
+      "type": "text",
+      "id": "title_letter_spacing",
+      "label": "Espaciado de letras del título",
+      "default": "normal"
     },
     {
       "type": "range",
