@@ -9,36 +9,6 @@
  */
 {
   "sections": {
-    "images_banner_wR3F47": {
-      "type": "images-banner",
-      "blocks": {
-        "banner_3XxHeb": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/shutterstock_2098691029.jpg",
-            "small_text": "",
-            "title": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "banner_rzbjR3": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/shutterstock_2527053247.jpg",
-            "small_text": "",
-            "title": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "banner_3XxHeb",
-        "banner_rzbjR3"
-      ],
-      "settings": {}
-    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -202,6 +172,36 @@
         "offset_top_mobile": 0,
         "offset_bottom_mobile": 0
       }
+    },
+    "images_banner_wR3F47": {
+      "type": "images-banner",
+      "blocks": {
+        "banner_3XxHeb": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/shutterstock_2098691029.jpg",
+            "small_text": "Hola",
+            "title": "Hola",
+            "button_label": "Hola",
+            "button_link": "#"
+          }
+        },
+        "banner_rzbjR3": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/shutterstock_2527053247.jpg",
+            "small_text": "",
+            "title": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_3XxHeb",
+        "banner_rzbjR3"
+      ],
+      "settings": {}
     },
     "featured-collection": {
       "type": "featured-collection",
