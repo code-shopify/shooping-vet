@@ -252,7 +252,7 @@
         "slides_per_view": 2,
         "slides_per_view_tablet": 3,
         "slides_per_view_desktop": 5,
-        "container_width": "1432px"
+        "container_width": "1952px"
       }
     },
     "images_banner_wR3F47": {
@@ -304,7 +304,7 @@
       "settings": {
         "margin_top": 43,
         "margin_bottom": 44,
-        "container_width": "1432px"
+        "container_width": "1952px"
       }
     },
     "featured-collection": {
