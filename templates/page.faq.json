@@ -1,62 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-	"sections": {
-		"faq-page-template": {
-			"type": "faq-page-template",
-			"settings": {
-			},
-			"blocks": {
-				"category-0": {
-					"type": "category",
-					"settings": {
-						"heading": "First category"
-					}
-				},
-				"faq-0": {
-					"type": "faq_item",
-					"settings": {
-						"heading": "Accordion heading",
-						"text": "<p>Accordion content</p>"
-					}
-				},
-				"faq-1": {
-					"type": "faq_item",
-					"settings": {
-						"heading": "Accordion heading",
-						"text": "<p>Accordion content</p>"
-					}
-				},
-				"category-1": {
-					"type": "category",
-					"settings": {
-						"heading": "Second category"
-					}
-				},
-				"faq-2": {
-					"type": "faq_item",
-					"settings": {
-						"heading": "Accordion heading",
-						"text": "<p>Accordion content</p>"
-					}
-				},
-				"faq-3": {
-					"type": "faq_item",
-					"settings": {
-						"heading": "Accordion heading",
-						"text": "<p>Accordion content</p>"
-					}
-				}
-			},
-			"block_order": [
-				"category-0",
-				"faq-0",
-				"faq-1",
-				"category-1",
-				"faq-2",
-				"faq-3"
-			]
-		}
-	},
-	"order": [
-		"faq-page-template"
-	]
+  "sections": {
+    "faq-page-template": {
+      "type": "faq-page-template",
+      "blocks": {
+        "category-0": {
+          "type": "category",
+          "disabled": true,
+          "settings": {
+            "heading": "First category"
+          }
+        },
+        "faq-0": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Realizan envíos a todo el país?",
+            "text": "<p>Sí, hacemos envíos a toda la República Mexicana. Los costos y tiempos de entrega<br/>dependen de la ubicación y el método de envío seleccionado.</p>"
+          }
+        },
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Cuánto tarda en llegar mi pedido?",
+            "text": "<p>Los tiempos de entrega varían según la ubicación, pero en general, los envíos<br/>tardan entre 2 y 5 días hábiles.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Tienen medicamentos que requieren receta?",
+            "text": "<p>Sí, algunos medicamentos requieren receta médica. Puedes enviarla a nuestro<br/>WhatsApp o correo electrónico al momento de hacer tu pedido.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Cuáles son las formas de pago disponibles?",
+            "text": "<p>Aceptamos pagos con tarjeta de crédito, débito, PayPal y transferencias bancarias. </p>"
+          }
+        },
+        "faq_item_QCM4iD": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Puedo hacer cambios o devoluciones?",
+            "text": "<p>Sí, aceptamos cambios y devoluciones en productos que no sean medicamentos, siempre<br/>que se encuentren en su empaque original y sin uso. Consulta nuestra política<br/>de devoluciones para más detalles.</p>"
+          }
+        },
+        "faq_item_JbgAFY": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Cómo puedo rastrear mi pedido?",
+            "text": "<p>Una vez que tu pedido sea enviado, recibirás un número de guía para rastrearlo en<br/>tiempo real a través de nuestra plataforma o la paquetería correspondiente.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category-0",
+        "faq-0",
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq_item_QCM4iD",
+        "faq_item_JbgAFY"
+      ],
+      "settings": {
+        "heading": "FAQ",
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 60,
+        "offset_top_mobile": 30,
+        "offset_bottom_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "faq-page-template"
+  ]
 }
