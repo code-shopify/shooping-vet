@@ -1,0 +1,151 @@
+{% stylesheet %}
+.categorias-circulares {
+  padding: 2rem 0;
+  text-align: center;
+}
+.categorias-circulares__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.swiper {
+  padding: 0 1rem;
+}
+.swiper-slide {
+  text-align: center;
+}
+.categoria-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+.categoria-item__image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-bottom: 0.5rem;
+  border: 4px solid #ffd400; /* ejemplo */
+}
+.categoria-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.categoria-item__title {
+  font-weight: bold;
+  color: #001c55;
+}
+{% endstylesheet %}
+
+{% javascript %}
+const swiper = new Swiper('#categorias-circulares-swiper', {
+  slidesPerView: {{ section.settings.slides_per_view }},
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    768: { slidesPerView: {{ section.settings.slides_per_view_tablet }} },
+    1024: { slidesPerView: {{ section.settings.slides_per_view_desktop }} },
+  },
+});
+{% endjavascript %}
+
+<div class="categorias-circulares">
+  <h2 class="categorias-circulares__title">{{ section.settings.heading }}</h2>
+  
+  <div class="swiper" id="categorias-circulares-swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          <a href="{{ block.settings.collection.url }}" class="categoria-item">
+            <div class="categoria-item__image">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | img_url: '240x240', crop: 'center' }}" alt="{{ block.settings.title }}">
+              {% endif %}
+            </div>
+            <div class="categoria-item__title">{{ block.settings.title }}</div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Categorías Circulares",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "¿Para quién comprarás hoy?"
+    },
+    {
+      "type": "range",
+      "id": "slides_per_view",
+      "label": "Elementos visibles (móvil)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slides_per_view_tablet",
+      "label": "Elementos visibles (tablet)",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "slides_per_view_desktop",
+      "label": "Elementos visibles (escritorio)",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "categoria",
+      "name": "Categoría",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Colección"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título personalizado",
+          "default": "Título"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen circular"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Categorías Circulares",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
