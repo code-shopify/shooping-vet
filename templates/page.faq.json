@@ -60,6 +60,34 @@
             "heading": "¿Cómo puedo rastrear mi pedido?",
             "text": "<p>Una vez que tu pedido sea enviado, recibirás un número de guía para rastrearlo en<br/>tiempo real a través de nuestra plataforma o la paquetería correspondiente.</p>"
           }
+        },
+        "faq_item_XYfRzT": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Ofrecen descuentos o promociones?",
+            "text": "<p>Sí, constantemente tenemos promociones y descuentos especiales. Suscríbete a<br/>nuestro boletín y síguenos en redes sociales para enterarte de las ofertas<br/>exclusivas.</p>"
+          }
+        },
+        "faq_item_TxQTbc": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Puedo programar pedidos recurrentes de alimento o medicamentos?",
+            "text": "<p>Sí, ofrecemos la opción de compras programadas para que no te preocupes por<br/>quedarte sin productos esenciales para tu mascota.</p>"
+          }
+        },
+        "faq_item_MJgRqt": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Cómo puedo contactar al servicio al cliente?",
+            "text": "<p>Puedes comunicarte con nosotros a través de WhatsApp, correo electrónico o redes<br/>sociales. Nuestro equipo está disponible para ayudarte en horario de atención.</p>"
+          }
+        },
+        "faq_item_wJFD89": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "¿Tienen tienda física o solo venden en línea?",
+            "text": "<p>Actualmente operamos 100% en línea, lo que nos permite ofrecer precios competitivos y<br/>entregas rápidas en todo el país.</p>"
+          }
         }
       },
       "block_order": [
@@ -69,7 +97,11 @@
         "faq-2",
         "faq-3",
         "faq_item_QCM4iD",
-        "faq_item_JbgAFY"
+        "faq_item_JbgAFY",
+        "faq_item_XYfRzT",
+        "faq_item_TxQTbc",
+        "faq_item_MJgRqt",
+        "faq_item_wJFD89"
       ],
       "settings": {
         "heading": "FAQ",
