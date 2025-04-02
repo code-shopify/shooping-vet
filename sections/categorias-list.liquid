@@ -1,60 +1,81 @@
 {% stylesheet %}
+  .categorias-circulares {
+    padding: 2rem 1rem;
+    text-align: center;
+    margin: 0 auto;
+  }
 
-.categorias-circulares {
-  padding: 2rem 1rem;
-  text-align: center;
-  margin: 0 auto;
+  .categorias-circulares__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  .swiper-slide {
+    text-align: center;
+  }
+  .categoria-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+  .categoria-item__image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffd400;
+    margin: 0 auto 0.5rem auto;
+  }
+  .categoria-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .categoria-item__title {
+    font-weight: bold;
+    color: #001c55;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #001c55;
+    font-size: 1rem !important;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 1rem !important; /* Ajusta el tamaño del ícono de las flechas */
+  }
+  .swiper-button-next {
+  background: #505251;
+  border-radius: .5rem;
 }
-
-.categorias-circulares__title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
+.swiper-button-prev {
+    background: #505251;
+  border-radius: .3rem;
+  font-weight: 900 !important;
 }
-.swiper-slide {
-  text-align: center;
+  @media (max-width: 749px) {
+    .categoria-item__image {
+      width: 150px;
+      height: 150px;
+    }
+    .banner-wrapper {
+  padding: 0rem 1rem;
 }
-.categoria-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-}
-.categoria-item__image {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #FFD400;
-  margin: 0 auto 0.5rem auto;
-}
-.categoria-item__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.categoria-item__title {
-  font-weight: bold;
-  color: #001C55;
-}
-.swiper-button-prev, .swiper-button-next {
-  color: #001C55;
-  font-size: 1rem !important;
-}
-.swiper-button-prev::after, .swiper-button-next::after {
-  font-size: 0.8rem !important; /* Ajusta el tamaño del ícono de las flechas */
-}
-
+  }
 {% endstylesheet %}
 
 <div class="categorias-circulares" style="max-width: {{ section.settings.container_width }}; margin: 0 auto;">
-  <h2 class="categorias-circulares__title" style="
-    color: {{ section.settings.title_color }};
-    font-size: {{ section.settings.title_font_size }};
-    font-weight: {{ section.settings.title_font_weight }};
-    letter-spacing: {{ section.settings.title_letter_spacing }};
-    text-align: {{ section.settings.title_alignment }};
-  ">
+  <h2
+    class="categorias-circulares__title"
+    style="
+      color: {{ section.settings.title_color }};
+      font-size: {{ section.settings.title_font_size }};
+      font-weight: {{ section.settings.title_font_weight }};
+      letter-spacing: {{ section.settings.title_letter_spacing }};
+      text-align: {{ section.settings.title_alignment }};
+    "
+  >
     {{ section.settings.heading }}
   </h2>
 
@@ -65,7 +86,10 @@
           <a href="{{ block.settings.collection.url }}" class="categoria-item">
             <div class="categoria-item__image">
               {% if block.settings.image != blank %}
-                <img src="{{ block.settings.image | img_url: '240x240', crop: 'center' }}" alt="{{ block.settings.title }}">
+                <img
+                  src="{{ block.settings.image | img_url: '240x240', crop: 'center' }}"
+                  alt="{{ block.settings.title }}"
+                >
               {% endif %}
             </div>
             <div class="categoria-item__title">{{ block.settings.title }}</div>
