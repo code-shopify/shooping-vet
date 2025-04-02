@@ -12,13 +12,6 @@
     "faq-page-template": {
       "type": "faq-page-template",
       "blocks": {
-        "category-0": {
-          "type": "category",
-          "disabled": true,
-          "settings": {
-            "heading": "First category"
-          }
-        },
         "faq-0": {
           "type": "faq_item",
           "settings": {
@@ -91,7 +84,6 @@
         }
       },
       "block_order": [
-        "category-0",
         "faq-0",
         "faq-1",
         "faq-2",
@@ -104,7 +96,7 @@
         "faq_item_wJFD89"
       ],
       "settings": {
-        "heading": "FAQ",
+        "heading": "Preguntas Frecuentes",
         "offset_top_desktop": 60,
         "offset_bottom_desktop": 60,
         "offset_top_mobile": 30,
