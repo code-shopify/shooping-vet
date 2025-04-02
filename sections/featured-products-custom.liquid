@@ -153,29 +153,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const contentWrapper = document.querySelector('.featured-products__content-wrapper');
-    const contentPosition = contentWrapper?.getAttribute('data-content-position');
-
-    if (contentWrapper && contentPosition) {
-        const applyDesktopStyles = () => {
-            if (window.innerWidth >= 768) { // Solo en escritorio
-                contentWrapper.style.display = 'flex';
-                contentWrapper.style.flexDirection = contentPosition;
-            } else {
-                contentWrapper.style.display = ''; // Restablece estilos en móvil
-                contentWrapper.style.flexDirection = '';
-            }
-        };
-
-        // Aplica los estilos al cargar la página
-        applyDesktopStyles();
-
-        // Escucha cambios en el tamaño de la ventana
-        window.addEventListener('resize', applyDesktopStyles);
-    }
-});
 </script>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const applyContentPositionStyles = () => {
+			const contentWrapper = document.querySelector('.featured-products__content-wrapper');
+			const contentPosition = contentWrapper?.getAttribute('data-content-position');
+	
+			if (contentWrapper && contentPosition) {
+				if (window.innerWidth >= 768) { // Solo en escritorio
+					contentWrapper.style.display = 'flex';
+					contentWrapper.style.flexDirection = contentPosition;
+				} else {
+					contentWrapper.style.display = ''; // Restablece estilos en móvil
+					contentWrapper.style.flexDirection = '';
+				}
+			}
+		};
+	
+		// Aplica los estilos al cargar la página
+		applyContentPositionStyles();
+	
+		// Escucha cambios en el tamaño de la ventana
+		window.addEventListener('resize', applyContentPositionStyles);
+	
+		// Escucha el evento de recarga de la sección en el personalizador
+		document.addEventListener('shopify:section:load', applyContentPositionStyles);
+	});
+	</script>
 
 {%- schema -%}
 {
