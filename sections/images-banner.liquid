@@ -7,7 +7,10 @@
       {% for block in section.blocks %}
         <div class="banner-block">
           {% if block.settings.image %}
-            <div class="banner-image" style="background-image: url({{ block.settings.image | img_url: 'master' }});">
+            <div class="banner-image" style="
+              background-image: url({{ block.settings.image | img_url: 'master' }});
+              height: {{ section.settings.image_height }}px;
+            ">
               <div class="banner-content" style="
                 color: {{ block.settings.text_color }};
                 font-size: {{ block.settings.text_size }};
