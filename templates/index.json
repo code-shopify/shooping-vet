@@ -322,6 +322,7 @@
       "settings": {
         "margin_top": 43,
         "margin_bottom": 44,
+        "image_height": 400,
         "container_width": "1952px"
       }
     },
