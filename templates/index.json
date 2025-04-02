@@ -183,17 +183,35 @@
             "small_text": "Hola",
             "title": "Hola",
             "button_label": "Hola",
-            "button_link": "#"
+            "button_link": "#",
+            "text_color": "#000000",
+            "text_size": 16,
+            "letter_spacing": 0,
+            "small_text_size": 14,
+            "small_text_bold": "normal",
+            "title_size": 24,
+            "title_bold": "bold",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff"
           }
         },
         "banner_rzbjR3": {
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/shutterstock_2527053247.jpg",
-            "small_text": "",
-            "title": "",
-            "button_label": "",
-            "button_link": ""
+            "small_text": "Hola",
+            "title": "Hola",
+            "button_label": "Hola",
+            "button_link": "#",
+            "text_color": "#000000",
+            "text_size": 16,
+            "letter_spacing": 0,
+            "small_text_size": 14,
+            "small_text_bold": "normal",
+            "title_size": 24,
+            "title_bold": "bold",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff"
           }
         }
       },
