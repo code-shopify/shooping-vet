@@ -267,6 +267,14 @@
             "image": "shopify://shop_images/shutterstock_2098691029.jpg"
           }
         },
+        "categoria_QFN4A9": {
+          "type": "categoria",
+          "settings": {
+            "collection": "",
+            "title": "Título",
+            "image": "shopify://shop_images/shutterstock_2098691029.jpg"
+          }
+        },
         "categoria_yPYmg9": {
           "type": "categoria",
           "settings": {
@@ -281,13 +289,14 @@
         "categoria_MJrp6b",
         "categoria_R79QL8",
         "categoria_JckRRn",
+        "categoria_QFN4A9",
         "categoria_yPYmg9"
       ],
       "settings": {
         "heading": "¿Para quién comprarás hoy?",
         "slides_per_view": 2,
         "slides_per_view_tablet": 3,
-        "slides_per_view_desktop": 6,
+        "slides_per_view_desktop": 5,
         "container_width": "1432px"
       }
     },
