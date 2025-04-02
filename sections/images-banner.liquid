@@ -1,4 +1,7 @@
-<section class="custom-banner-section">
+<section class="custom-banner-section" style="
+  margin-top: {{ section.settings.margin_top }}px;
+  margin-bottom: {{ section.settings.margin_bottom }}px;
+">
   <div class="featured-collection__container">
     <div class="banner-wrapper">
       {% for block in section.blocks %}
@@ -45,7 +48,7 @@
   }
   .custom-banner-section .banner-wrapper {
     display: flex;
-    flex-wrap: wrap;
+    gap: 2rem;
   }
   .custom-banner-section .banner-block {
     width: 50%;
@@ -58,6 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 2rem;
   }
   .custom-banner-section .banner-content {
     text-align: center;
@@ -83,7 +87,28 @@
 {%- schema -%}
 {
   "name": "Dos Banners",
-  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margen superior",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margen inferior",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    }
+  ],
   "blocks": [
     {
       "type": "banner",
@@ -98,21 +123,25 @@
           "type": "text",
           "id": "small_text",
           "label": "Texto pequeño",
+   
         },
         {
           "type": "text",
           "id": "title",
           "label": "Título",
+  
         },
         {
           "type": "text",
           "id": "button_label",
           "label": "Texto del botón",
+   
         },
         {
           "type": "url",
           "id": "button_link",
           "label": "Enlace del botón",
+  
         },
         {
           "type": "color",
