@@ -164,7 +164,7 @@
         "thumbnails_background_color": "#000000",
         "thumbnails_background_color_opacity": 20,
         "container_width": "inherit",
-        "height_desktop": 100,
+        "height_desktop": 43,
         "height_mobile": 100,
         "subtract_header_height": true,
         "offset_top_desktop": 0,
