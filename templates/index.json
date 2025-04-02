@@ -342,7 +342,8 @@
         "banner_heading": "LO MÁS TOP",
         "banner_text": "<div class=\"btn-all\"> VER TODO </div>",
         "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
-        "container_width": "1952px"
+        "container_width": "1952px",
+        "content_position": "row-reverse"
       }
     },
     "featured-collection": {
@@ -546,7 +547,8 @@
         "banner_heading": "LO MÁS TOP",
         "banner_text": "<div class=\"btn-all\"> VER TODO </div>",
         "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
-        "container_width": "1952px"
+        "container_width": "1952px",
+        "content_position": "row"
       }
     },
     "benefits": {
