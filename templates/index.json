@@ -173,57 +173,6 @@
         "offset_bottom_mobile": 0
       }
     },
-    "images_banner_wR3F47": {
-      "type": "images-banner",
-      "blocks": {
-        "banner_3XxHeb": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/shutterstock_2098691029.jpg",
-            "small_text": "Hola",
-            "title": "Hola",
-            "button_label": "Hola",
-            "button_link": "#",
-            "text_color": "#000000",
-            "text_size": 16,
-            "letter_spacing": 0,
-            "small_text_size": 14,
-            "small_text_bold": "normal",
-            "title_size": 24,
-            "title_bold": "bold",
-            "button_color": "#000000",
-            "button_text_color": "#ffffff"
-          }
-        },
-        "banner_rzbjR3": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/shutterstock_2527053247.jpg",
-            "small_text": "Hola",
-            "title": "Hola",
-            "button_label": "Hola",
-            "button_link": "#",
-            "text_color": "#000000",
-            "text_size": 16,
-            "letter_spacing": 0,
-            "small_text_size": 14,
-            "small_text_bold": "normal",
-            "title_size": 24,
-            "title_bold": "bold",
-            "button_color": "#000000",
-            "button_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "banner_3XxHeb",
-        "banner_rzbjR3"
-      ],
-      "settings": {
-        "margin_top": 43,
-        "margin_bottom": 44
-      }
-    },
     "categorias_list_ehVNwd": {
       "type": "categorias-list",
       "blocks": {
@@ -294,10 +243,65 @@
       ],
       "settings": {
         "heading": "¿Para quién comprarás hoy?",
+        "title_color": "#000000",
+        "title_font_size": "1.8rem",
+        "title_font_weight": "100",
+        "title_letter_spacing": "normal",
         "slides_per_view": 2,
         "slides_per_view_tablet": 3,
         "slides_per_view_desktop": 5,
         "container_width": "1432px"
+      }
+    },
+    "images_banner_wR3F47": {
+      "type": "images-banner",
+      "blocks": {
+        "banner_3XxHeb": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/shutterstock_2098691029.jpg",
+            "small_text": "Hola",
+            "title": "Hola",
+            "button_label": "Hola",
+            "button_link": "#",
+            "text_color": "#000000",
+            "text_size": 16,
+            "letter_spacing": 0,
+            "small_text_size": 14,
+            "small_text_bold": "normal",
+            "title_size": 24,
+            "title_bold": "bold",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "banner_rzbjR3": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/shutterstock_2527053247.jpg",
+            "small_text": "Hola",
+            "title": "Hola",
+            "button_label": "Hola",
+            "button_link": "#",
+            "text_color": "#000000",
+            "text_size": 16,
+            "letter_spacing": 0,
+            "small_text_size": 14,
+            "small_text_bold": "normal",
+            "title_size": 24,
+            "title_bold": "bold",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "banner_3XxHeb",
+        "banner_rzbjR3"
+      ],
+      "settings": {
+        "margin_top": 43,
+        "margin_bottom": 44
       }
     },
     "featured-collection": {
@@ -617,8 +621,8 @@
   },
   "order": [
     "slideshow",
-    "images_banner_wR3F47",
     "categorias_list_ehVNwd",
+    "images_banner_wR3F47",
     "featured-collection",
     "featured_collection_ArKWRJ",
     "featured_collection_aDHtEY",
