@@ -54,7 +54,7 @@
     "button_text_color_secondary_with_border_hover": "#fff",
     "button_background_color_secondary_with_border_hover": "#181818",
     "button_border_color_secondary_with_border_hover": "transparent",
-    "container_width": "1432px",
+    "container_width": "100%",
     "color_label_primary_border": "rgba(0,0,0,0)",
     "color_label_secondary_background": "#0774d7",
     "color_label_secondary_border": "rgba(0,0,0,0)",
