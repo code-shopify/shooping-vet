@@ -60,7 +60,7 @@
 			</h2>
 		{%- endif -%}
 
-		<div class="featured-products__content-wrapper">
+		<div class="featured-products__content-wrapper" data-content-position="{{ section.settings.content_position }}">
 			{% if show_banner and is_text_in_banner %}
 				<div class="featured-products__banner-aspect-ratio need-animate tr-dur-0-8" style="{{ banner_styles }}">
 				<a href="{{ custom_url }}">	
@@ -151,6 +151,29 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contentWrapper = document.querySelector('.featured-products__content-wrapper');
+    const contentPosition = contentWrapper?.getAttribute('data-content-position');
+
+    if (contentWrapper && contentPosition) {
+        const applyDesktopStyles = () => {
+            if (window.innerWidth >= 768) { // Solo en escritorio
+                contentWrapper.style.display = 'flex';
+                contentWrapper.style.flexDirection = contentPosition;
+            } else {
+                contentWrapper.style.display = ''; // Restablece estilos en móvil
+                contentWrapper.style.flexDirection = '';
+            }
+        };
+
+        // Aplica los estilos al cargar la página
+        applyDesktopStyles();
+
+        // Escucha cambios en el tamaño de la ventana
+        window.addEventListener('resize', applyDesktopStyles);
+    }
 });
 </script>
 
@@ -258,6 +281,23 @@ document.addEventListener('DOMContentLoaded', function() {
 			],
 			"default": "inherit",
 			"info": "If you select 'Inherit of general setting', then container width will be used from the Theme settings/Layout"
+		  },
+		  {
+			"type": "select",
+			"id": "content_position",
+			"label": "Content position",
+			"options": [
+				{
+					"value": "row",
+					"label": "Izquierda"
+				},
+				{
+					"value": "row-reverse",
+					"label": "Derecha"
+				}
+			],
+			"default": "row",
+			"info": "Selecciona la posición del contenido en escritorio."
 		  }
 		],
 	"presets": [
