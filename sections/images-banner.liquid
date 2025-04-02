@@ -1,0 +1,135 @@
+
+<section class="custom-banner-section">
+  <div class="featured-collection__container">
+  <div class="banner-wrapper">
+    {% for block in section.blocks %}
+      <div class="banner-block">
+        {% if block.settings.image %}
+          <div class="banner-image" style="background-image: url({{ block.settings.image | img_url: 'master' }});">
+            <div class="banner-content">
+              {% if block.settings.small_text != blank %}
+                <p class="banner-small-text">{{ block.settings.small_text }}</p>
+              {% endif %}
+              {% if block.settings.title != blank %}
+                <h2 class="banner-title">{{ block.settings.title }}</h2>
+              {% endif %}
+              {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                <a href="{{ block.settings.button_link }}" class="banner-button">{{ block.settings.button_label }}</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+</section>
+
+<style>
+  .custom-banner-section .featured-collection__container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .custom-banner-section .banner-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .custom-banner-section .banner-block {
+    width: 50%;
+  }
+  .custom-banner-section .banner-image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .custom-banner-section .banner-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: absolute;
+    width: 30%;
+    left: 0;
+  }
+  .custom-banner-section .banner-small-text {
+    font-size: 0.9em;
+    font-style: italic;
+  }
+  .custom-banner-section .banner-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .custom-banner-section .banner-button {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 25px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  @media (max-width: 749px) {
+    .custom-banner-section .banner-block {
+      width: 100%;
+    }
+  }
+</style>
+
+{%- schema -%}
+{
+  "name": "Dos Banners",
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Bloque de Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "text",
+          "id": "small_text",
+          "label": "Texto pequeño"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Texto del botón"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Enlace del botón"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dos Banners",
+      "blocks": [
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        }
+      ]
+    }
+  ]
+}
+{%- endschema -%}
